@@ -1,0 +1,62 @@
+---
+import PracticePage from "../../components/practicePage/_PracticePage.astro";
+import Layout from "../../layouts/Layout.astro";
+
+import Accelerator from "../../components/_common/imgs/Accelerator.jpg";
+import KOVA from "../../components/_common/imgs/KOVA.jpg";
+import Cullinary from "../../components/_common/imgs/Cullinary.jpg";
+import Fire from "../../components/_common/imgs/Fire.jpg";
+
+const content = {
+    name: "Intellectual Property",
+    intro: `Wegner Law PLLC's intellectual property practice protects and maximizes the value of clients' innovations and creations. Our attorneys offer comprehensive services in IP strategy, protection, enforcement, and litigation.`,
+    description: [
+        `Our intellectual property services encompass patent, trademark, copyright, and trade secret protection. We assist clients in obtaining and defending IP rights, licensing, and navigating the complexities of IP law to safeguard their competitive edge.`,
+        `Wegner Law PLLC is dedicated to providing strategic IP advice tailored to our clients' business goals. Whether you are a startup with groundbreaking technology or an established company managing a large IP portfolio, our experienced attorneys are here to support your innovation.`,
+    ],
+    clients: [Accelerator, Fire, Cullinary, KOVA],
+    matters: [
+        {
+            title: "Patent Portfolio Management",
+            background: "A tech company needed to manage and expand its patent portfolio to protect its innovations.",
+            outcome: `Wegner Law PLLC successfully obtained multiple patents for the company and provided strategic advice on portfolio management, enhancing the company's market position.`,
+        },
+        {
+            title: `Trademark Enforcement`,
+            background: `A business faced trademark infringement issues that threatened its brand identity.`,
+            outcome: `Wegner Law PLLC enforced the client's trademark rights through litigation and negotiation, ensuring brand protection and market integrity.`,
+        },
+        {
+            title: `IP Licensing Agreement`,
+            background: `A client sought to monetize its intellectual property through licensing agreements.`,
+            outcome: `Wegner Law PLLC drafted and negotiated favorable licensing agreements, enabling the client to generate significant revenue from its IP assets.`,
+        },
+    ],
+    services: [
+        {
+            icon: 'branding_watermark',
+            name: "Trademark Registration",
+            costs: "$1,500",
+        },
+        {
+            icon: 'receipt_long',
+            name: "License Agreement",
+            costs: "$300-$5,000+",
+        },
+    ],
+    practices: [
+        "Business Law",
+        "Corporate Law",
+        "Franchise Law",
+        "Healthcare Law",
+        "Mergers & Acquisitions",
+        "Private Equity",
+        "More..."
+    ],
+};
+
+---
+
+<Layout title={ content.name + " Law Firm | Wegner Law PLLC"} description={content.intro}>
+    <PracticePage content={content}/>
+</Layout>

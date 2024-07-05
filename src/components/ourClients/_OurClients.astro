@@ -1,0 +1,115 @@
+---
+import Logos from "./Logos.astro";
+import Testimonials from "./Testimonials.astro";
+---
+
+
+<div class="strip">
+    <h2>Our clients</h2>
+    <div class="client-logo-array">
+        <Logos />
+    </div>
+
+    <div class="client-logo-display">
+        <div class="client-logo-container"></div>
+        <div class="client-logo-container"></div>
+        <div class="client-logo-container"></div>
+        <div class="client-logo-container"></div>
+        <div class="client-logo-container"></div>
+    </div>
+</div>
+<Testimonials />
+
+<style>
+    h2 {
+        @media (min-width: 768px) {
+            text-align: center;
+        }
+    }
+    .client-logo-array {
+        display: none;
+    }
+
+    .client-logo-display {
+        text-align: center;
+        @media (min-width: 768px) {
+            display: flex;
+            justify-content: space-around;
+            padding: 2rem 0;
+        }
+    }
+
+    .strip{
+        @media(min-width: 768px){
+            padding-top: 3rem;
+
+        }
+    }
+
+    .client-logo-container {
+        padding: 2rem 0;
+        @media (min-width: 768px) {
+            padding: 0;
+        }
+    }
+</style>
+
+<script>
+    const clientLogoEnclosure = () => {
+        const logos = document.querySelectorAll(".client-logo-img");
+        const displays = document.querySelectorAll(".client-logo-container");
+        let currentLogo = 0;
+        const displaysLength = displays.length;
+        let lastDisplay = -1;
+
+        // Improved random number generator function
+        const getRandomNumber = (min, max) =>
+            Math.floor(Math.random() * (max - min + 1) + min);
+
+        // Optimized getRandomDisplay function to prevent the same display from being selected consecutively
+        const getRandomDisplay = () => {
+            let nextDisplay;
+            do {
+                nextDisplay = getRandomNumber(0, displaysLength - 1);
+            } while (nextDisplay === lastDisplay);
+            lastDisplay = nextDisplay;
+            return nextDisplay;
+        };
+
+        for (let index = 0; index < displaysLength; index++) {
+            const display = displays[index];
+            const logo = logos[index % logos.length];
+            display.appendChild(logo);
+            logo.classList.remove("client-logo-img-hidden");
+            currentLogo++;
+        }
+
+        // Optimized replaceImg function to handle fade-in effect
+        const replaceImg = (ele, newImage) => {
+            const oldImage = ele.lastChild;
+            oldImage.classList.add("client-logo-img-hidden");
+
+            // Set a timeout to allow the fade-out effect to complete
+            setTimeout(() => {
+                // Ensure the new image has the 'hidden' class before it's appended
+                newImage.classList.add("client-logo-img-hidden");
+                ele.replaceChild(newImage, oldImage);
+
+                // Use setTimeout to allow the browser to render the new image with 'hidden' class
+                setTimeout(() => {
+                    // Remove the 'hidden' class to trigger the fade-in effect
+                    newImage.classList.remove("client-logo-img-hidden");
+                }, 20); // Short delay to ensure the class removal triggers the transition
+            }, 1000); // Ensure this matches the CSS transition-duration
+        };
+
+        // Set interval to replace images
+        setInterval(() => {
+            const dis = getRandomDisplay();
+            const nextImage = logos[currentLogo++ % logos.length];
+            replaceImg(displays[dis], nextImage.cloneNode(true)); // Clone the node to avoid removing it from its original position
+        }, 3000); // Increased interval to ensure animations have time to complete
+    };
+
+    clientLogoEnclosure();
+</script>

@@ -1,0 +1,66 @@
+---
+import PracticePage from "../../components/practicePage/_PracticePage.astro";
+import Layout from "../../layouts/Layout.astro";
+
+import Allen from "../../components/_common/imgs/Allen.jpg";
+import Gerber from "../../components/_common/imgs/Gerber.jpg";
+import Millenium from "../../components/_common/imgs/Millennium.jpg";
+import McAnly from "../../components/_common/imgs/McAnly.jpg";
+
+const content = {
+    name: "Mergers & Acquisitions",
+    intro: `Wegner Law PLLC's mergers and acquisitions practice provides expert legal counsel for complex M&A transactions. Our attorneys guide clients through every stage of the process, from due diligence to negotiation and closing.`,
+    description: [
+        `Our M&A services include structuring transactions, conducting due diligence, drafting and negotiating agreements, and ensuring regulatory compliance. We help clients achieve successful outcomes whether they are acquiring, merging, or divesting businesses.`,
+        `Wegner Law PLLC is dedicated to delivering strategic advice and practical solutions in M&A transactions. Our experienced attorneys work closely with clients to understand their goals and navigate the complexities of M&A to maximize value and minimize risks.`,
+    ],
+    clients: [Allen, McAnly, Millenium, Gerber],
+    matters: [
+        {
+            title: "Cross-Border M&A",
+            background: "A multinational corporation sought to acquire a foreign company to expand its global footprint.",
+            outcome: `Wegner Law PLLC managed the cross-border transaction, addressing legal, regulatory, and cultural challenges, resulting in a successful acquisition.`,
+        },
+        {
+            title: `Strategic Business Merger`,
+            background: `Two companies wanted to merge to create a market leader in their industry.`,
+            outcome: `Wegner Law PLLC facilitated the merger, ensuring a smooth integration and compliance with all regulatory requirements.`,
+        },
+        {
+            title: `Divestiture Transaction`,
+            background: `A client needed to divest a subsidiary to streamline operations.`,
+            outcome: `Wegner Law PLLC successfully negotiated and closed the divestiture, optimizing the client's business structure and financial position.`,
+        },
+    ],
+    services: [
+        {
+            icon: 'business_center',
+            name: "Transaction Structuring",
+            costs: "$2,000-$25,000",
+        },
+        {
+            icon: 'search',
+            name: "Due Diligence",
+            costs: "$3,000-$15,000",
+        },
+    ],
+    practices: [
+        "Asset Protection",
+        "Business Law",
+        "Corporate Law",
+        "Franchise Law",
+        "Healthcare Law",
+        "Intellectual Property",
+        "Real Estate",
+        "Private Equity",
+        "Securities Law",
+        "Tax & Tax Planning",
+        "More..."
+    ],
+};
+
+---
+
+<Layout title={ content.name + " Law Firm | Wegner Law PLLC"} description={content.intro}>
+    <PracticePage content={content}/>
+</Layout>

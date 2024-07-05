@@ -1,0 +1,70 @@
+---
+import PracticePage from "../../components/practicePage/_PracticePage.astro";
+import Layout from "../../layouts/Layout.astro";
+
+import Allen from "../../components/_common/imgs/Allen.jpg";
+import Gerber from "../../components/_common/imgs/Gerber.jpg";
+import Millenium from "../../components/_common/imgs/Millennium.jpg";
+import McAnly from "../../components/_common/imgs/McAnly.jpg";
+
+const content = {
+    name: "Private Equity",
+    intro: `Wegner Law PLLC's private equity practice delivers strategic legal advice to private equity firms and portfolio companies. Our attorneys assist clients with fund formation, investments, acquisitions, and exits.`,
+    description: [
+        `Our private equity services include fund structuring, due diligence, transaction negotiation, and regulatory compliance. We support clients through every phase of the investment lifecycle, from initial fund formation to successful exits.`,
+        `Wegner Law PLLC is committed to helping private equity clients achieve their investment objectives. Our experienced attorneys provide tailored legal solutions to navigate the complexities of private equity transactions and maximize returns.`,
+    ],
+    clients: [Allen, McAnly, Millenium, Gerber],
+    matters: [
+        {
+            title: "Fund Formation",
+            background: "A private equity firm needed assistance in forming a new investment fund.",
+            outcome: `Wegner Law PLLC structured the fund, ensuring compliance with all legal requirements and optimizing its investment strategy.`,
+        },
+        {
+            title: `Portfolio Company Acquisition`,
+            background: `A client sought to acquire a portfolio company to expand its investment portfolio.`,
+            outcome: `Wegner Law PLLC conducted due diligence and negotiated the acquisition, resulting in a valuable addition to the client's portfolio.`,
+        },
+        {
+            title: `Exit Strategy Implementation`,
+            background: `A private equity firm needed to exit an investment and maximize returns.`,
+            outcome: `Wegner Law PLLC developed and executed a strategic exit plan, achieving a profitable outcome for the client.`,
+        },
+    ],
+    services: [
+        {
+            icon: 'attach_money',
+            name: "Fund Formation",
+            costs: "$1,000-$50,000",
+        },
+        {
+            icon: 'business_center',
+            name: "Investment Transactions",
+            costs: "$1,000-$30,000",
+        },
+        {
+            icon: 'exit_to_app',
+            name: "Exit Strategies",
+            costs: "$2,000-$20,000",
+        },
+    ],
+    practices: [
+        "Asset Protection",
+        "Business Law",
+        "Corporate Law",
+        "Franchise Law",
+        "Healthcare Law",
+        "Intellectual Property",
+        "Mergers & Acquisitions",
+        "Real Estate",
+        "Securities Law",
+        "Tax & Tax Planning",
+        "More..."
+    ],
+};
+
+---
+<Layout title={ content.name + " Law Firm | Wegner Law PLLC"} description={content.intro}>
+    <PracticePage content={content}/>
+</Layout>

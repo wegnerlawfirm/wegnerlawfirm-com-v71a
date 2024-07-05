@@ -1,0 +1,53 @@
+<panels-component>
+    <slot />
+</panels-component>
+
+<script>
+    class PanelsComponent extends HTMLElement {
+        constructor() {
+            super();
+
+
+            const panels = this.querySelectorAll(".panel-container");
+
+            panels.forEach(pnl=>{
+                if(pnl.getAttribute('data-state')==='opened'){
+                    const display = pnl.querySelector('.panel-panel')
+                    //@ts-ignore
+                    display.style.maxHeight = display.scrollHeight +'px'
+                }
+            })
+  
+            const resetPanels = () => {
+                panels.forEach((pnl) => {
+                    pnl.setAttribute("data-state", "closed");
+                    const displayPanel = pnl.querySelector(".panel-panel");
+                    //@ts-ignore
+                    displayPanel.style.maxHeight = "0";
+                });
+            };
+            //@ts-ignore
+            const openPanel = (pnl) => {
+                const display = pnl.querySelector(".panel-panel");
+                pnl.setAttribute('data-state', 'opened')
+                //@ts-ignore
+                const height = display.scrollHeight + 35 + "px";
+                //@ts-ignore
+                display.style.maxHeight = height
+            };
+
+            panels.forEach(pnl=>{
+                const btn = pnl.querySelector('.panel-label')
+                //@ts-ignore
+                btn.addEventListener('click',()=>{
+                    const openAfterReset = !(pnl.getAttribute('data-state')==='opened')
+                    resetPanels()
+                    if(openAfterReset){
+                        openPanel(pnl)
+                    }
+                })
+            })
+        }
+    }
+    customElements.define('panels-component', PanelsComponent)
+</script>

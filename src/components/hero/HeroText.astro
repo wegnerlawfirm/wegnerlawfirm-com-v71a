@@ -1,0 +1,50 @@
+<div class="hero-text-container" id="container-hero-text">
+    <div class="hero-title-group">
+        <div class="hero-title" id="title-hero">
+            Been there<span style="font-size: .8em">.</span><br />
+            Done that<span style="font-size: .8em">.</span>
+        </div>
+        <h1 class="hero-subtitle" id="subtitle-hero">
+            Business lawyers that are businesspeople too.
+        </h1>
+    </div>
+    <p class="hero-subtext" id="subtext-hero">
+        We understand what you want from an attorney because we are
+        businesspeople too. Learn how we leverage our real-world experience to
+        provide world-class service to clients.
+    </p>
+</div>
+
+<style>
+    .hero-text-container {
+        z-index: 9;
+        padding-top: 25vh;
+        padding-left: 1rem;
+        transition: opacity 1s;
+    }
+    .hero-title {
+        font-family: var(--titleFont);
+        color: var(--titleColor);
+        font-size: 3rem;
+        line-height: 1.2;
+        font-weight: 300;
+    }
+
+    .hero-subtitle {
+        color: white;
+        font-weight: 200;
+        font-size: 1.7rem;
+    }
+
+    .hero-subtext {
+        color: white;
+        max-width: 500px;
+        padding-top: 1rem;
+    }
+
+    @media (min-width: 768px) {
+        .hero-text-container {
+            padding: 0 0 5rem 2rem;
+        }
+    }
+</style>

@@ -1,0 +1,163 @@
+---
+import Icon from "../_common/Icon.astro";
+import Practice from "./Practice.astro";
+
+const practiceAres = [
+    {
+        name: "Asset Protection",
+        icon: "security",
+        link: "/practices/asset-protection",
+        intro: "Our Asset Protection practice focuses on safeguarding your hard-earned wealth from potential creditors and legal claims. We employ strategic planning and legal structures to help individuals and businesses preserve their assets while reducing taxes along the way.",
+    },
+    {
+        name: "Business Law",
+        icon: "store",
+        link: "/practices/business-law",
+        intro: "Our Business Law practice provides comprehensive legal services to businesses of all sizes, from startups to established corporations. We offer guidance on entity formation, contracts, compliance, and day-to-day operational matters to help your business thrive in today's competitive landscape.",
+    },
+    {
+        name: "Corporate Law",
+        icon: "corporate_fare",
+        link: "/practices/corporate-law",
+        intro: "Our Corporate Law practice specializes in addressing the complex legal needs of corporations. We provide expert advice on corporate governance, regulatory compliance, shareholder matters, and strategic transactions to ensure your company's legal framework supports its growth and success.",
+    },
+    {
+        name: "Franchise Law",
+        icon: "storefront",
+        link: "/practices/franchise-law",
+        intro: "Our Franchise Law practice offers specialized legal services for both franchisors and franchisees. We assist with franchise agreement negotiations, compliance with franchise regulations, and dispute resolution to help you navigate the unique challenges of the franchise business model.",
+    },
+    {
+        name: "Healthcare",
+        icon: "ecg_heart",
+        link: "/practices/healthcare-law",
+        intro: "Our Healthcare Law practice is dedicated to serving the legal needs of healthcare providers, facilities, and organizations. We offer guidance on regulatory compliance, licensing, patient privacy, and healthcare transactions to help you navigate the complex and ever-changing healthcare landscape.",
+    },
+    {
+        name: "Intellectual Property",
+        icon: "lightbulb",
+        link: "/practices/ip",
+        intro: "Our Intellectual Property practice focuses on protecting and leveraging your valuable intangible assets. We offer comprehensive services in patent, trademark, copyright, and trade secret law to help you secure, defend, and monetize your intellectual property rights.",
+    },
+    {
+        name: "Mergers & Acquisitions",
+        icon: "swap_horiz",
+        link: "/practices/mergers-and-acquisitions",
+        intro: "Our Mergers & Acquisitions practice guides clients through complex corporate transactions. We provide strategic advice and expert legal services for mergers, acquisitions, divestitures, and joint ventures to help you achieve your business objectives and maximize value.",
+    },
+    {
+        name: "Private Equity",
+        icon: "account_balance",
+        link: "/practices/private-equity",
+        intro: "Raising capital is a critical step for businesses seeking growth, expansion, or even stability. We specialize in assisting clients through the intricate process of capital raising via Private Placement Memorandums (PPMs) and other offerings. Our experienced legal team ensures compliance, transparency, and strategic advantage in your capital raising endeavors.",
+    },
+    {
+        name: "Real Estate",
+        icon: "home_work",
+        link: "/practices/real-estate",
+        intro: "Our Real Estate practice provides expert legal services for all aspects of real estate transactions and development. We assist with property acquisitions, leasing, financing, zoning, and land use matters to help you achieve your real estate goals and minimize risks.",
+    },
+    {
+        name: "Securities Law",
+        icon: "show_chart",
+        link: "/practices/securities-law",
+        intro: "Our Securities Law practice offers comprehensive legal services related to securities offerings, compliance, and regulatory matters. We guide clients through public and private offerings, SEC reporting requirements, and securities litigation to help you navigate the complex world of securities regulation.",
+    },
+    {
+        name: "Tax & Tax Planning",
+        icon: "receipt_long",
+        link: "/practices/tax",
+        intro: "Our Tax & Tax Planning practice provides strategic advice to individuals and businesses on tax matters. We offer comprehensive tax planning, compliance, and controversy services to help you minimize tax liabilities, ensure compliance, and achieve your financial objectives.",
+    },
+    {
+        name: "More",
+        icon: "more_horiz",
+        link: "#",
+        intro: "Our firm offers additional specialized legal services beyond those listed here. We are committed to providing comprehensive legal support across a wide range of practice areas to meet all of your legal needs.",
+    },
+];
+
+const halfway = Math.floor(practiceAres.length / 2);
+const col1 = practiceAres.slice(0, halfway);
+const col2 = practiceAres.slice(halfway);
+---
+
+<div class="strip" id="our-practices-strip">
+    <h2>Our practices</h2>
+    <div class="strip-content">
+        <div class="panel-sm">
+            <h3 id="title-our-practices">Everything a business needs.</h3>
+            <p id="content-our-practices" class="content-text">
+                Wegner Law PLLC's focus on business law allows the firm to offer
+                the same ranges of services to companies, entrepreneurs,
+                investment fund and investor clients with the personal service
+                and flexibility of a boutique law firm.
+            </p>
+            <a
+                class="content-link"
+                href="#practices"
+                id="content-link-our-practices"
+            >
+                <span id="text-content-link-our-practices">
+                    Select a practice area to learn more.
+                </span>
+                <div class="content-link-icon">
+                    <Icon icon="chevron_right" />
+                </div>
+            </a>
+        </div>
+
+        <div class="panel-lg">
+            <div class="panel-lg-col">
+                {
+                    col1.map((p) => (
+                        <Practice
+                            label={p.name}
+                            icon={p.icon}
+                            intro={p.intro}
+                            link={p.link}
+                        />
+                    ))
+                }
+            </div>
+
+            <div class="panel-lg-col">
+                {
+                    col2.map((p) => (
+                        <Practice
+                            label={p.name}
+                            icon={p.icon}
+                            intro={p.intro}
+                            link={p.link}
+                        />
+                    ))
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    h2{
+        @media(min-width: 768px){
+            text-align: right;
+        }
+    }
+
+    .strip{
+        background-color: #f7f7f7;
+
+
+        @media(min-width: 768px){
+            padding-top: 3rem;
+        }
+    }
+
+    .panel-lg{
+        padding-bottom: 3rem;
+    }
+</style>
+
+<script>
+    import "./assets/ourpractices.js";
+</script>

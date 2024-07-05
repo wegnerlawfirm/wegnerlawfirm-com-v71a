@@ -1,0 +1,61 @@
+---
+import Icon from "../_common/Icon.astro";
+
+const { practice } = Astro.props;
+
+const getLink = () => {
+    switch (practice) {
+        case "Asset Protection":
+            return "/practices/asset-protection";
+        case "Business Law":
+            return "/practices/business-law";
+        case "Corporate Law":
+            return "/practices/corporate-law";
+        case "Franchise Law":
+            return "/practices/franchice-law";
+        case "Healthcare Law":
+            return "/practices/healthcare-law";
+        case "Intellectual Property":
+            return "/practices/ip";
+        case "Mergers & Acquisitions":
+            return "/practices/mergers-and-acquisitions";
+        case "Private Equity":
+            return "/practices/private-equity";
+        case "Real Estate":
+            return "/practices/real-estate";
+        case 'Securities Law':
+            return '/practices/securities-law';
+        case "Tax & Tax Planning":
+            return "/practices/tax";
+        default:
+            return "";
+    }
+};
+
+const calculatedLink = getLink();
+const hasLink = calculatedLink!==''
+---
+
+<a href={calculatedLink} class="practice-practice">
+    {practice}&nbsp;
+    {
+        hasLink&& (
+            <div>
+                <Icon icon="link" />
+            </div>
+        )
+    }
+</a>
+
+<style>
+    .practice-practice {
+        display: flex;
+        padding-bottom: 0.5rem;
+        color: var(--titleColor);
+        text-decoration: none;
+    }
+
+    [href=""] {
+        color: #333;
+    }
+</style>

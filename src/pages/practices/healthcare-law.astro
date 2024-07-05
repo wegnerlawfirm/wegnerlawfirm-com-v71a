@@ -1,0 +1,69 @@
+---
+import PracticePage from "../../components/practicePage/_PracticePage.astro";
+import Layout from "../../layouts/Layout.astro";
+
+import Alessi from "../../components/_common/imgs/Alessi.jpg";
+import Specialty from "../../components/_common/imgs/Specialty.jpg";
+import Millenium from "../../components/_common/imgs/Millennium.jpg";
+import Refresh from "../../components/_common/imgs/Refresh.jpg";
+
+const content = {
+    name: "Healthcare Law",
+    intro: `Wegner Law PLLC's healthcare law practice offers specialized legal services to healthcare providers, institutions, and related businesses. Our attorneys possess deep knowledge of the healthcare industry's regulatory environment and are dedicated to helping clients navigate the complexities of healthcare law.`,
+    description: [
+        `Our healthcare law services cover a wide range of issues, including regulatory compliance, healthcare transactions, medical malpractice defense, and healthcare litigation. We assist clients in understanding and adhering to federal and state healthcare regulations, negotiating and drafting contracts, and resolving disputes.`,
+        `Wegner Law PLLC is committed to providing proactive and strategic legal advice to healthcare clients. Whether you are a hospital, a medical practice, or a healthcare startup, our experienced attorneys are here to help you address your legal challenges and achieve your business objectives.`,
+    ],
+    clients: [Alessi, Refresh, Millenium, Specialty],
+    matters: [
+        {
+            title: "Regulatory Compliance for Healthcare Providers",
+            background: "A healthcare provider needed to ensure compliance with a complex web of federal and state regulations.",
+            outcome: `Wegner Law PLLC provided comprehensive compliance advice, helping the provider implement necessary policies and procedures to meet regulatory requirements and avoid potential penalties.`,
+        },
+        {
+            title: `Healthcare Transaction Assistance`,
+            background: `A medical practice sought assistance with a significant transaction involving the sale of its assets.`,
+            outcome: `Wegner Law PLLC successfully negotiated and structured the transaction, ensuring all legal and regulatory aspects were addressed, resulting in a smooth and compliant sale.`,
+        },
+        {
+            title: `Medical Malpractice Defense`,
+            background: `A physician faced a medical malpractice lawsuit that could jeopardize their career and reputation.`,
+            outcome: `Wegner Law PLLC vigorously defended the physician, ultimately achieving a favorable settlement that protected their professional standing.`,
+        },
+    ],
+    services: [
+  
+        {
+            icon: 'business_center',
+            name: "Practice Formation",
+            costs: "$1,000-$10,000",
+        },
+        {
+            icon: 'verified_user',
+            name: "Regulatory Compliance",
+            costs: "$1,000-$12,000",
+        },
+        {
+            icon: 'receipt_long',
+            name: "Employment Agreements",
+            costs: "$500-$10,000",
+        },
+    ],
+    practices: [
+        "Asset Protection",
+        "Business Law",
+        "Corporate Law",
+        "Intellectual Property",
+        "Mergers & Acquisitions",
+        "Real Estate",
+        "Private Equity",
+        "Tax & Tax Planning",
+        "More..."
+    ],
+};
+
+---
+<Layout title={ content.name + " Law Firm | Wegner Law PLLC"} description={content.intro}>
+    <PracticePage content={content}/>
+</Layout>

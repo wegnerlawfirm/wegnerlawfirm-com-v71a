@@ -1,0 +1,81 @@
+---
+import { Image } from "astro:assets";
+import QuotationMarks from "../_common/QuotationMarks.astro";
+
+const {
+    img,
+    quote,
+    client,
+    speaker,
+    position,
+    startVisible = false,
+} = Astro.props;
+
+const computeClass = startVisible
+    ? "testimonial-container"
+    : "testimonial-container testimonial-container-hidden";
+---
+
+<div class={computeClass}>
+    <div class="testimonial-img-container">
+        <Image
+            src={img}
+            alt={speaker + " of " + client + " recomends Wegner Law PLLC."}
+            class="testimonial-img"
+        />
+    </div>
+    <div class="testimonial-quotation-marks-container">
+        <QuotationMarks />
+    </div>
+    <p class="testimonial-quote">
+        {quote}
+    </p>
+    <p class="testimoial-speaker">
+        --{speaker}<br />
+        {position}<br />
+        <span class="testimonial-client">
+            {client}
+        </span>
+    </p>
+</div>
+
+<style>
+    .testimonial-container {
+        width: 95%;
+        max-width: 400px;
+        margin: 0 auto;
+        opacity: 1;
+        transition: opacity 0.5s;
+    }
+
+    .testimonial-container-hidden {
+        opacity: 0;
+    }
+
+    .testimonial-img-container {
+        text-align: right;
+    }
+
+    .testimonial-img {
+        height: 100px;
+        width: auto;
+    }
+
+    .testimonial-quotation-marks-container {
+        width: 2rem;
+        fill: var(--titleColor);
+    }
+
+    .testimonial-quote {
+        padding-bottom: 1rem;
+    }
+
+    .testimoial-speaker {
+        text-align: right;
+        font-size: 0.9em;
+    }
+
+    .testimonial-client {
+        font-weight: 700;
+    }
+</style>

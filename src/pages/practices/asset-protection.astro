@@ -1,0 +1,66 @@
+---
+import PracticePage from "../../components/practicePage/_PracticePage.astro";
+import Layout from "../../layouts/Layout.astro";
+
+import Allen from "../../components/_common/imgs/Allen.jpg";
+import Gerber from "../../components/_common/imgs/Gerber.jpg";
+import Millenium from "../../components/_common/imgs/Millennium.jpg";
+import McAnly from "../../components/_common/imgs/McAnly.jpg";
+
+const content = {
+    name: "Asset Protection",
+    intro: `Wegner Law PLLC's asset protection practice focuses on safeguarding clients' wealth and assets from potential risks and liabilities. Our attorneys employ advanced strategies to ensure that our clients' assets are secure, allowing them to focus on their financial goals with peace of mind.`,
+    description: [
+        `Asset protection involves legal strategies to guard assets against potential creditors, lawsuits, and other threats. It includes structuring ownership through trusts, partnerships, and corporations to minimize exposure to risks. Proper asset protection planning can help preserve wealth and provide a secure financial future for individuals and businesses.`,
+        `Our attorneys specialize in creating customized asset protection plans that address the unique needs of each client. This includes evaluating risk factors, advising on asset structuring, and implementing legal tools such as family limited partnerships, irrevocable trusts, and offshore entities. By proactively managing risks, we help clients protect their assets and achieve long-term financial stability.`,
+    ],
+    clients: [Allen, McAnly, Millenium, Gerber],
+    matters: [
+        {
+            title: "High-Net-Worth Individual Asset Protection",
+            background:
+                "A high-net-worth individual needed to protect significant personal assets from potential litigation risks.",
+            outcome: `Wegner Law PLLC established a series of trusts and entities, effectively shielding the client's assets from potential creditors and ensuring long-term financial security.`,
+        },
+        {
+            title: `Business Owner Liability Mitigation`,
+            background: `A business owner sought to minimize personal liability exposure related to their business operations.`,
+            outcome: `Wegner Law PLLC structured the business ownership and assets to separate personal and business liabilities, significantly reducing the risk of personal asset loss.`,
+        },
+        {
+            title: `Estate Planning for Wealth Preservation`,
+            background: `A family wanted to protect their estate and ensure smooth succession planning.`,
+            outcome: `Wegner Law PLLC created a comprehensive estate plan, including asset protection trusts, to preserve the family's wealth and provide for future generations.`,
+        },
+    ],
+    services: [
+        {
+            icon:'security',
+            name: "Asset Protection Planning",
+            costs: "$3,000-$10,000",
+        },
+        {
+            icon: 'receipt_long',
+            name: "Basic Estate Planning",
+            costs: "$1,000-$2,000",
+        },
+        {
+            icon: 'family_restroom',
+            name: "Succession Planning",
+            costs: "$1,250-$10,000",
+        },
+    ],
+    practices: [
+        "Business Law",
+        "Healthcare Law",
+        "Mergers & Acquisitions",
+        "Private Equity",
+        "Tax & Tax Planning",
+        "More..."
+    ],
+};
+---
+
+<Layout title={ content.name + " Law Firm | Wegner Law PLLC"} description={content.intro}>
+    <PracticePage content={content}/>
+</Layout>

@@ -1,0 +1,72 @@
+---
+import PracticePage from "../../components/practicePage/_PracticePage.astro";
+import Layout from "../../layouts/Layout.astro";
+
+import Gerber from "../../components/_common/imgs/Gerber.jpg";
+import Tag from "../../components/_common/imgs/TAGroup.jpg";
+import HFI from '../../components/_common/imgs/HFI.jpg'
+import NRF from '../../components/_common/imgs/NRF.jpg'
+
+const content = {
+    name: "Corporate Law",
+    intro: `Wegner Law PLLC's corporate law practice delivers expert legal counsel to corporations across various industries. Our attorneys are adept at handling the complexities of corporate governance, compliance, transactions, and disputes, ensuring that our clients operate smoothly and efficiently.`,
+    description: [
+        `Our corporate law services encompass all aspects of corporate operations, from formation and governance to mergers, acquisitions, and dissolutions. We assist clients in structuring their organizations to optimize efficiency and compliance, negotiate and draft critical contracts, and navigate the regulatory landscape.`,
+        `We pride ourselves on offering strategic advice that aligns with our clients' business objectives. Whether it is a start-up seeking guidance on initial structuring or a large corporation dealing with complex transactions, Wegner Law PLLC provides the expertise and support necessary to achieve success.`,
+    ],
+    clients: [Gerber, Tag, HFI, NRF],
+    matters: [
+        {
+            title: "Corporate Governance Enhancement",
+            background: "A corporation required assistance in enhancing its governance practices to meet industry standards.",
+            outcome: `Wegner Law PLLC developed and implemented robust governance policies and procedures, ensuring compliance and improving overall organizational effectiveness.`,
+        },
+        {
+            title: `Cross-Border Mergers`,
+            background: `A multinational company was looking to merge with a foreign entity to expand its global footprint.`,
+            outcome: `Wegner Law PLLC managed the cross-border merger process, addressing legal, regulatory, and cultural challenges to achieve a seamless integration.`,
+        },
+        {
+            title: `Dispute Resolution`,
+            background: `A client faced a significant legal dispute that threatened its business operations.`,
+            outcome: `Wegner Law PLLC successfully resolved the dispute through strategic negotiation and litigation, minimizing disruption and safeguarding the client's interests.`,
+        },
+    ],
+    services: [
+        {
+            icon: 'account_balance',
+            name: "Corporate Governance",
+            costs: "$1,000-$8,000",
+        },
+        {
+            icon: 'swap_horiz',
+            name: "Mergers & Acquisitions",
+            costs: "$2,000-$18,000",
+        },
+        {
+            icon: 'verified_user',
+            name: "Compliance & Regulatory Advice",
+            costs: "$1,200-$9,000",
+        },
+    ],
+    practices: [
+        "Asset Protection",
+        "Corporate Law",
+        "Franchise Law",
+        "Healthcare Law",
+        "Intellectual Property",
+        "Mergers & Acquisitions",
+        "Real Estate",
+        "Private Equity",
+        "Securities Law",
+        "Tax & Tax Planning",
+        "More..."
+    ],
+};
+
+
+---
+
+<Layout title={ content.name + " Law Firm | Wegner Law PLLC"} description={content.intro}>
+    <PracticePage content={content}/>
+</Layout>

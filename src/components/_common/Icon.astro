@@ -1,0 +1,28 @@
+---
+interface Props {
+    icon: string;
+}
+
+const { icon } = Astro.props;
+---
+
+<span class="material-symbols-outlined">
+    {icon}
+    </span>
+
+<style>
+    .material-symbols-outlined {
+        font-variation-settings:
+            "FILL" 0,
+            "wght" inherit,
+            "GRAD" 0,
+            "opsz" 24;
+
+        font-size: inherit;
+        color: inherit;
+        font-weight: inherit;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>

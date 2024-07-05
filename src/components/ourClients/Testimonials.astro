@@ -1,0 +1,102 @@
+---
+import Testimonial from "./Testimonial.astro";
+import Allen from "../_common/imgs/Allen-testimony.png";
+import Bartlett from "../_common/imgs/Bartlett-testimony.png";
+import McAnly from "../_common/imgs/McAnly-testimony.png";
+import Refresh from "../_common/imgs/Refresh-testimony.png";
+import Speciality from "../_common/imgs/Specialty-testimony.png";
+---
+
+<div class="strip">
+    <div id="testimonial-display-strip">
+        <div class="testimony-display-container">
+            <Testimonial
+                client="Bartlett International Ltd."
+                img={Bartlett}
+                speaker="David Cooper"
+                position="General Counsel"
+                quote="Working with Chris is an absolute pleasure; his expertise and efficiency makes my job much easier. He has been invaluable to us as we expand in the U.S. market."
+                startVisible
+            />
+        </div>
+    </div>
+</div>
+
+<div style="display: none">
+    <div class="testimony-display-container">
+        <Testimonial
+            client="McAnly Citrus & Livestock LLC"
+            img={McAnly}
+            speaker="Paul Hickman"
+            position="Managing Member"
+            quote="Chris is the only attorney that I have ever met that truly understands our industry and our needs. I cannot recomend him enough."
+        />
+    </div>
+
+    <div class="testimony-display-container">
+        <Testimonial
+            client="Specialty Concierge PA"
+            img={Speciality}
+            speaker="George Calvin, M.D."
+            position="Chief Executive Officer"
+            quote="We knew we needed a good attorney to do what we were looking to do. In Chris, we found the best and I am not sure we would be where we are today without him."
+        />
+    </div>
+
+    <div class="testimony-display-container">
+        <Testimonial
+            client="Allen + Wayne Investments"
+            img={Allen}
+            speaker="Elizabeth Wayne"
+            position="Cheif Investment Officer"
+            quote="Chris is the best attorney that I have ever worked with. Over the years, he has become an integral part of our team and I do not know what we would do without him."
+        />
+    </div>
+
+    <div class="testimony-display-container">
+        <Testimonial
+            client="Refresh Physicians Group"
+            img={Refresh}
+            speaker="James Whitaker, M.D."
+            position="Physician"
+            quote="Chris is simply amazing. He has been invaluable to the success of Refresh and I would highly recommend him to anyone looking for a top notch and responsive attorney."
+        />
+    </div>
+</div>
+<style>
+    .strip {
+        background-color: #f8f8f8;
+        min-height: 430px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+</style>
+
+<script>
+    const testimonies = document.querySelectorAll(".testimonial-container");
+    const display = document.getElementById("testimonial-display-strip");
+    const testimoniesLength = testimonies.length;
+    let currentTestimony = 1;
+
+    const updateTestimony = (ele:HTMLElement, newTestimony:HTMLElement) => {
+        const oldTestimony = ele.querySelector(".testimonial-container");
+        //@ts-ignore
+        oldTestimony.classList.add("testimonial-container-hidden");
+        setTimeout(() => {
+            newTestimony.classList.add("testimonial-container-hidden");
+            ele.innerHTML = "";
+            ele.appendChild(newTestimony);
+            setTimeout(() => {
+                newTestimony.classList.remove("testimonial-container-hidden");
+            }, 20);
+        }, 1000);
+    };
+
+    // Set interval to replace images
+    setInterval(() => {
+        const nextImage = testimonies[currentTestimony++ % testimoniesLength];
+        //@ts-ignore
+        updateTestimony(display, nextImage.cloneNode(true)); // Clone the node to avoid removing it from its original position
+    }, 9000); // Increased interval to ensure animations have time to complete
+</script>

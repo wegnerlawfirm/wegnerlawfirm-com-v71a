@@ -1,0 +1,45 @@
+---
+import Icon from "../_common/Icon.astro";
+
+const { service = {} } = Astro.props;
+---
+
+<div class="service-container">
+    <div class="service-label">
+        <div class="service-label-icon">
+            <Icon icon={service.icon} />
+        </div>
+        {service.name}
+    </div>
+    {
+        service.cost !== "" && (
+            <div class="service-price-display">
+                <div class="service-price-disclaimer">Starting at</div>
+                <div class="service-price-price">{service.costs}</div>
+            </div>
+        )
+    }
+</div>
+
+<style>
+    .service-container{
+        padding-bottom: 1rem;
+    }
+
+    .service-label-icon{
+        width: 1.7rem;
+    }
+
+    .service-label{
+        display: flex;
+    }
+
+    .service-price-disclaimer{
+        font-size: .8em;
+    }
+
+    .service-price-price{
+        font-size: 1.3rem;
+        color: var(--logoColor);
+    }
+</style>

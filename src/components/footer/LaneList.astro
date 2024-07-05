@@ -1,0 +1,97 @@
+---
+const {label, items, links} = Astro.props
+let currrentItem = 0;
+---
+
+<footer-list>
+  <div class="footer-list-container">
+  <div class="footer-list-header">
+    <div class="footer-list-label">
+      {label}
+    </div>
+    <div class="footer-list-sign">
+      +
+    </div>
+  </div>
+  <ul class="footer-list">
+    {
+      items.map(itm=>{
+        const link = links[currrentItem]
+        currrentItem++;
+        return(
+          <li class="footer-item">
+            <a href={link} class="footer-link">
+              {itm}
+            </a>
+          </li>
+        )
+      })
+    }
+  </ul>
+  </div>
+</footer-list>
+
+<style>
+  .footer-list-header{
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-weight: 500;
+    padding-bottom: 0.25rem;
+    padding-right: 1rem;
+    cursor: pointer;
+  }
+
+  .footer-list{
+    list-style-type: none;
+    display: none;
+  }
+
+  .footer-list.footer-list-open{
+    display: block;
+  }
+
+  .footer-link {
+    color: silver;
+    text-decoration: none;
+  }
+
+  .footer-list-container{
+    padding-bottom: 1rem;
+  }
+
+  @media(min-width: 768px){
+    .footer-list{
+      display: block;
+    }
+
+    .footer-list-sign{
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  class LaneList extends HTMLElement{
+    constructor(){
+      super()
+
+      const btn = this.querySelector('.footer-list-header')
+      const panel = this.querySelector('.footer-list')
+      const sign = this.querySelector('.footer-list-sign')
+
+      let isOpen=false
+
+      btn.addEventListener('click', ()=>{
+        panel.classList.toggle('footer-list-open')
+        if(panel.classList.contains('footer-list-open')){
+          sign.textContent='-'
+        }else{
+          sign.textContent='+'
+        }
+      })
+    }
+  }
+
+  customElements.define('footer-list', LaneList)
+</script>

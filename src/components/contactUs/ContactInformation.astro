@@ -1,0 +1,110 @@
+---
+import Icon from "../_common/Icon.astro";
+---
+
+<div class="contact-line">
+    <div class="contact-line-icon">
+        <Icon icon="phone" />
+    </div>
+    <a class="contact-line-link" href="callTo:2394499200"> (239) 449-9200 </a>
+</div>
+
+<div class="contact-line">
+    <div class="contact-line-icon">
+        <Icon icon="sms" />
+    </div>
+    <a class="contact-line-link" href="smsTo:2394499200"> (239) 449-9200 </a>
+</div>
+
+<div class="contact-line">
+    <div class="contact-line-icon">
+        <Icon icon="fax" />
+    </div>
+    <a class="contact-line-link" href="faxTo:2397853990"> (239) 785-3990 </a>
+</div>
+
+<div class="contact-line">
+    <div class="contact-line-icon">
+        <Icon icon="alternate_email" />
+    </div>
+    <a class="contact-line-link" href="mailTo:info@wegnerlawfirm.com">
+        info@wegnerlawfirm.com
+    </a>
+</div>
+
+<div class="contact-line address-line">
+    <div class="contact-line-icon address-line-icon">
+        <Icon icon="home_pin" />
+    </div>
+    <div class="address-line-title">Estero Office (Main)</div>
+</div>
+<address>
+    23160 Fashion Drive<br />
+    Suite 217<br />
+    Estero, FL 33928
+</address><a class="directions-line" href="#">
+    <div class="directions-line-icon">
+        <Icon icon="map" />
+    </div>
+    <div class="directions-line-link" >Directions</div>
+</a>
+<div class="contact-line address-line">
+    <div class="contact-line-icon address-line-icon">
+        <Icon icon="location_on" />
+    </div>
+    <div class="address-line-title">Naples Office</div>
+</div>
+<address>
+    875 109th Ave. N.<br />
+    Suite 302<br />
+    Naples, FL 34108
+</address>
+<a class="directions-line" href="#">
+    <div class="directions-line-icon">
+        <Icon icon="map" />
+    </div>
+    <div class="directions-line-link" >Directions</div>
+</a>
+
+<div class="contact-line address-line">
+    <div class="contact-line-icon address-line-icon">
+        <Icon icon="local_post_office" />
+    </div>
+    <div class="address-line-title">Mailing Address</div>
+</div>
+<address>
+    P.O. Box 1353<br />
+    Estero, FL 33929-1353
+</address>
+
+<style>
+    .directions-line {
+        display: flex;
+        align-items: center;
+        padding-left: 1.7rem;
+        text-decoration: none;
+        color: var(--titleColor);
+    }
+    .directions-line-icon {
+        width: 1.7rem;
+    }
+
+    .directions-line-link {
+
+    }
+
+    .address-line {
+        padding-top: 1rem;
+        line-height: 1.4;
+    }
+
+    .address-line-title {
+        font-weight: 700;
+    }
+
+    address {
+        padding-left: 1.7rem;
+        font-style: normal;
+        line-height: 1.4;
+    }
+</style>

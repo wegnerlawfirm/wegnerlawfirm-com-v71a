@@ -1,0 +1,42 @@
+---
+    const {matter={}, altRow=false} = Astro.props
+
+    const getBackground=altRow? '#f5f5f5': 'white'
+---
+
+<div class="matter-container">
+    <div class="matter-title">
+        {matter.title}
+    </div>
+    <div class="matter-label">
+        Background
+    </div>
+    <p class="content-text">
+        {matter.background}
+    </p>
+    <div class="matter-label">
+        Outcome
+    </div>
+    <p class="content-text">
+        {matter.outcome}
+    </p>
+</div>
+
+<style define:vars={{getBackground}}>
+    .matter-container{
+        background-color: var(--getBackground);
+    }
+
+    .matter-title{
+        font-size: 1rem;
+        color: var(--logoColor);
+        margin-bottom: 1rem;
+        font-family: var(--titleFont);
+        border-bottom: 1px solid;
+    }
+
+    .matter-label{
+        font-weight: 500;
+        color: var(--altTitleColor);
+    }
+</style>

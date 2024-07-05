@@ -1,0 +1,43 @@
+---
+import Facebook from "./assets/Facebook.astro";
+import X from "./assets/X.astro";
+import LinkedIn from "./assets/LinkedIn.astro";
+---
+
+<div class="social-media-bar">
+  <a class="social-media-link" href="#">
+    <LinkedIn fill='silver'/>
+  </a>
+  <a class="social-media-link" href="#">
+    <Facebook fill='silver'/>
+  </a>
+
+  <a class="social-media-link" href="#">
+    <X fill='silver'/>
+  </a>
+</div>
+
+<style>
+  .social-media-bar{
+    display: flex;
+    padding: .5rem 0;
+    justify-content: center;
+  }
+
+  .social-media-link{
+    width: 65px;
+    padding: 0 .3rem;
+    cursor: pointer;
+  }
+
+  @media(min-width: 768px){
+    .social-media-bar{
+      justify-content: flex-end;
+    }
+
+    .social-media-link{
+      width: 35px;
+      padding: 0 .2rem;
+    }
+  }
+</style>

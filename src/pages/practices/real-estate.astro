@@ -1,0 +1,68 @@
+---
+import PracticePage from "../../components/practicePage/_PracticePage.astro";
+import Layout from "../../layouts/Layout.astro";
+
+import Allen from "../../components/_common/imgs/Allen.jpg";
+import Gerber from "../../components/_common/imgs/Gerber.jpg";
+import Millenium from "../../components/_common/imgs/Millennium.jpg";
+import Holbrix from "../../components/_common/imgs/Holbrix.jpg";
+
+const content = {
+    name: "Real Estate",
+    intro: `Wegner Law PLLC's real estate practice offers comprehensive legal services in real estate transactions, development, and litigation. Our attorneys provide strategic advice and practical solutions to help clients navigate the real estate market.`,
+    description: [
+        `Our real estate services include property acquisitions and sales, leasing, development, financing, and dispute resolution. We assist clients in structuring and negotiating transactions, ensuring regulatory compliance, and resolving conflicts efficiently.`,
+        `Wegner Law PLLC is dedicated to providing tailored legal solutions to real estate clients. Whether you are buying, selling, developing, or managing property, our experienced attorneys are here to help you achieve your real estate objectives.`,
+    ],
+    clients: [Allen, Holbrix, Millenium, Gerber],
+    matters: [
+        {
+            title: "Commercial Property Acquisition",
+            background: "A client needed assistance in acquiring a commercial property for business expansion.",
+            outcome: `Wegner Law PLLC negotiated and closed the acquisition, ensuring all legal and regulatory requirements were met, facilitating a successful transaction.`,
+        },
+        {
+            title: `Real Estate Development Project`,
+            background: `A developer sought legal guidance on a large-scale real estate development project.`,
+            outcome: `Wegner Law PLLC provided comprehensive legal support throughout the project, from zoning and permitting to construction and financing, ensuring a smooth and compliant development process.`,
+        },
+        {
+            title: `Lease Agreement Negotiation`,
+            background: `A landlord needed assistance in negotiating lease agreements with new tenants.`,
+            outcome: `Wegner Law PLLC drafted and negotiated favorable lease agreements, protecting the landlord's interests and securing long-term, reliable tenants.`,
+        },
+    ],
+    services: [
+        {
+            icon: 'business',
+            name: "Property Transactions",
+            costs: "$1,500-$20,000",
+        },
+        {
+            icon: 'domain',
+            name: "Development Projects",
+            costs: "$1,000-$30,000",
+        },
+        {
+            icon: 'description',
+            name: "Lease Agreements",
+            costs: "$500-$10,000",
+        },
+    ],
+    practices: [
+        "Asset Protection",
+        "Business Law",
+        "Corporate Law",
+        "Healthcare Law",
+        "Mergers & Acquisitions",
+        "Private Equity",
+        "Tax & Tax Planning",
+        "More..."
+    ],
+};
+
+---
+
+<Layout title={ content.name + " Law Firm | Wegner Law PLLC"} description={content.intro}>
+    <PracticePage content={content}/>
+</Layout>

@@ -1,0 +1,52 @@
+---
+import Icon from "./Icon.astro";
+
+interface Props {
+    isOpen?: boolean;
+}
+
+const { isOpen = false } = Astro.props;
+
+const calculateInitialState = isOpen ? "opened" : "closed";
+const calculateInitialHeight = isOpen ? "initial" : "0";
+---
+
+<div class="panel-container" data-state={calculateInitialState}>
+    <div class="panel-label">
+        <slot name="label" />
+        <div class="panel-ctrls">
+            <div class="panel-expand"><Icon icon="expand_content" /></div>
+        </div>
+        <div class="panel-collapse">
+            <Icon icon="collapse_content" />
+        </div>
+    </div>
+
+    <div class="panel-panel">
+        <slot />
+    </div>
+</div>
+<style define:vars={{ calculateInitialHeight }}>
+    .panel-label {
+        display: flex;
+        cursor: pointer;
+    }
+
+    .panel-panel {
+        overflow: hidden;
+        max-height: var(--calculateInitialHeight);
+        transition: max-height .7s ease-in-out;
+    }
+
+    [data-state="closed"] {
+        .panel-collapse {
+            display: none;
+        }
+    }
+
+    [data-state="opened"] {
+        .panel-expand {
+            display: none;
+        }
+    }
+</style>

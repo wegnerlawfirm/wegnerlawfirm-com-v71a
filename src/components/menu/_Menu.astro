@@ -1,0 +1,183 @@
+---
+import Icon from "../_common/Icon.astro";
+import Logo from "./assets/Logo.astro";
+import "./assets/menu.css";
+---
+
+<header class="nav-header" id="header-nav">
+  <div class="nav-brand">
+    <a href="#home" class="header-link">
+      <div class="nav-logo" id="logo-nav">
+        <Logo />
+      </div>
+    </a>
+    <div class="nav-toggle" id="toggle-nav">
+      <div class="nav-hamburger" id="hamburger-nav">
+        <Icon icon="menu" />
+      </div>
+      <div class="nav-close" id="close-nav">
+        <Icon icon="close" />
+      </div>
+    </div>
+  </div>
+
+  <nav class="nav-bar" id="bar-nav">
+    <ul class="nav-menu">
+      <li class="nav-item">
+        <a href="#about" class="nav-link header-link"> About </a>
+      </li>
+
+      <li class="nav-item">
+        <a href="#attorney" class="nav-link header-link"> Attorney </a>
+      </li>
+
+      <li class="nav-item">
+        <a href="#practices" class="nav-link header-link"> Practices </a>
+      </li>
+
+      <li class="nav-item">
+        <a href="#contact" class="nav-link header-link"> Contact </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  .nav-header {
+    position: fixed;
+    padding: 5px 10px 0 10px;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    background-color: transparent;
+    color: white;
+
+    min-height: 0;
+    transition:
+      min-height 0.5s,
+      background-color 0.5s;
+  }
+
+  .nav-logo {
+    width: 150px;
+    padding-right: 20px;
+    cursor: pointer;
+    transition:
+      padding 0.5s,
+      width 0.5s;
+  }
+
+  .nav-brand {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .nav-menu {
+    display: none;
+  }
+
+  .nav-item {
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .nav-link {
+    color: inherit;
+    font-size: inherit;
+    text-decoration: none;
+  }
+
+  .nav-close {
+    display: none;
+  }
+
+  .nav-hamburger,
+  .nav-close {
+    font-size: 2rem;
+  }
+
+  .nav-toggle {
+    cursor: pointer;
+  }
+
+  .nav-header.menu-open {
+    background-color: white;
+    min-height: 100vh;
+    .nav-logo {
+      padding-right: 60px;
+    }
+
+    .logo-w {
+      fill: var(--logoColor);
+      stroke: var(--logoColor);
+    }
+
+    .logo-wegner-law {
+      fill: #333;
+      stroke: #333;
+    }
+    .nav-close {
+      display: block;
+      color: #333;
+    }
+    .nav-hamburger {
+      display: none;
+    }
+    .nav-menu {
+      display: block;
+    }
+    .nav-item {
+      color: var(--logoColor);
+    }
+  }
+
+  .nav-header.header-off-top {
+    background-color: white;
+    .nav-logo {
+      padding-right: 40px;
+      width: 130px;
+    }
+    .nav-hamburger {
+      color: #333;
+    }
+
+    .logo-w {
+      fill: var(--logoColor);
+      stroke: var(--logoColor);
+    }
+
+    .logo-wegner-law {
+      fill: #333;
+      stroke: #333;
+    }
+
+    .nav-item {
+      color: var(--logoColor);
+    }
+  }
+
+  @media (min-width: 768px) {
+    .nav-header {
+      display: flex;
+    }
+
+    .nav-toggle {
+      display: none;
+    }
+
+    .nav-menu {
+      display: flex;
+      list-style-type: none;
+    }
+
+    .nav-item {
+      font-size: 1rem;
+    }
+  }
+</style>
+
+<script>
+  import "./assets/menu.js";
+</script>

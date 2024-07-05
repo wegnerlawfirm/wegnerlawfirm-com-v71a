@@ -1,0 +1,110 @@
+---
+import Icon from "../_common/Icon.astro";
+
+interface Props {
+    label: string;
+    icon: string;
+    intro: string;
+    link?: string;
+}
+
+const { label, icon, intro, link = "" } = Astro.props;
+
+const hasLink = !(link === "");
+---
+
+<div
+    class="practice-container"
+    data-state="closed"
+    data-practice={label}
+    data-intro={intro}
+    data-link={link}
+>
+    <div class="practice-label">
+        <div class="practice-label-icon">
+            <Icon icon={icon} />
+        </div>
+        <div class="practice-label-name">
+            {label}
+        </div>
+        <div class="practice-label-controls">
+            <div class="practice-label-expand">
+                <Icon icon="expand_content" />
+            </div>
+            <div class="practice-label-collapse">
+                <Icon icon="collapse_content" />
+            </div>
+        </div>
+    </div>
+    <div class="practice-panel">
+        <p class="content-text">
+            {intro}
+        </p>
+        {
+            hasLink && (
+                <a class="content-link" href={link}>
+                    Visit practice page to learn more.
+                    <div class="content-link-icon">
+                        <Icon icon="chevron_right" />
+                    </div>
+                </a>
+            )
+        }
+    </div>
+</div>
+
+<style>
+    .practice-container {
+        @media (min-width: 768px) {
+            width: 280px;
+        }
+    }
+
+    .practice-label {
+        display: flex;
+        cursor: pointer;
+        align-items: center;
+        font-size: 1.3rem;
+        padding-bottom: 1rem;
+    }
+
+    .practice-label-icon {
+        width: 2rem;
+    }
+
+    .content-link {
+        padding-bottom: 1rem;
+    }
+
+    .practice-panel {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.7s ease-in-out;
+    }
+
+    .practice-label-controls {
+        font-weight: 300;
+        color: var(--titleColor);
+    }
+
+    .practice-label-collapse {
+        display: none;
+    }
+
+    [data-state="opened"] {
+        .practice-label-collapse {
+            display: block;
+        }
+
+        .practice-label-expand {
+            display: none;
+        }
+
+        .practice-label {
+            color: var(--titleColor);
+            font-weight: 400;
+        }
+    }
+
+
+</style>

@@ -1,0 +1,71 @@
+---
+import PracticePage from "../../components/practicePage/_PracticePage.astro";
+import Layout from "../../layouts/Layout.astro";
+
+import Allen from "../../components/_common/imgs/Allen.jpg";
+import Gerber from "../../components/_common/imgs/Gerber.jpg";
+import Millenium from "../../components/_common/imgs/Millennium.jpg";
+import McAnly from "../../components/_common/imgs/McAnly.jpg";
+
+const content = {
+    name: "Securities",
+    intro: `Wegner Law PLLC's securities practice provides expert legal services in securities law compliance, transactions, and litigation. Our attorneys help clients navigate the complexities of securities regulations and achieve their financial objectives.`,
+    description: [
+        `Our securities law services include compliance with SEC regulations, public and private offerings, securities litigation, and enforcement defense. We assist clients in structuring and executing transactions while ensuring adherence to all legal requirements.`,
+        `Wegner Law PLLC is dedicated to providing strategic advice and robust representation in securities matters. Whether you are issuing securities, dealing with compliance issues, or facing litigation, our experienced attorneys are here to support your needs.`,
+    ],
+    clients: [Allen, McAnly, Millenium, Gerber],
+    matters: [
+        {
+            title: "SEC Compliance",
+            background: "A publicly traded company needed assistance in maintaining compliance with SEC regulations.",
+            outcome: `Wegner Law PLLC provided comprehensive compliance advice, helping the company meet all regulatory requirements and avoid potential penalties.`,
+        },
+        {
+            title: `Private Placement Offering`,
+            background: `A client sought to raise capital through a private placement offering.`,
+            outcome: `Wegner Law PLLC structured and executed the private placement, ensuring compliance with securities laws and successfully raising the desired capital.`,
+        },
+        {
+            title: `Securities Litigation Defense`,
+            background: `A client faced securities fraud allegations that threatened their business.`,
+            outcome: `Wegner Law PLLC vigorously defended the client, ultimately achieving a favorable resolution and protecting the client's interests.`,
+        },
+    ],
+    services: [
+        {
+            icon: 'security',
+            name: "RIA Compliance",
+            costs: "$1,000-$20,000",
+        },
+        {
+            icon: 'attach_money',
+            name: "Public Offerings",
+            costs: "$5,000-$25,000",
+        },
+
+        {
+            icon: 'payments',
+            name: "Private Placements",
+            costs: "$2,000-$15,000",
+        },
+    ],
+    practices: [
+        "Asset Protection",
+        "Business Law",
+        "Corporate Law",
+        "Franchise Law",
+        "Healthcare Law",
+        "Intellectual Property",
+        "Mergers & Acquisitions",
+        "Real Estate",
+        "Private Equity",
+        "Tax & Tax Planning",
+        "More..."
+    ],
+};
+
+---
+<Layout title={ content.name + " Law Firm | Wegner Law PLLC"} description={content.intro}>
+    <PracticePage content={content}/>
+</Layout>

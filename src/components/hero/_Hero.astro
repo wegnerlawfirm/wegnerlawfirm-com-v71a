@@ -1,0 +1,30 @@
+---
+import HeroImages from "./HeroImg.astro";
+import HeroText from "./HeroText.astro";
+---
+
+<div class="hero-container" id="container-hero">
+  <div id="container-hero-imgs">
+    <HeroImages />
+  </div>
+  <HeroText />
+</div>
+
+<style>
+  .hero-container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+  }
+
+  @media (min-width: 768px) {
+    .hero-container {
+      align-items: flex-end;
+    }
+  }
+</style>
+
+<script>
+  import "./assets/hero.js";
+</script>

@@ -1,0 +1,76 @@
+---
+import PracticePage from "../../components/practicePage/_PracticePage.astro";
+import Layout from "../../layouts/Layout.astro";
+
+import Allen from "../../components/_common/imgs/Allen.jpg";
+import Tag from "../../components/_common/imgs/TAGroup.jpg";
+import Cushman from '../../components/_common/imgs/Cushman.jpg'
+import Accel from '../../components/_common/imgs/Accelerator.jpg'
+
+const content = {
+    name: "Business Law",
+    intro: `Wegner Law PLLC's business law practice provides comprehensive legal services to businesses of all sizes. Our experienced attorneys offer strategic advice and practical solutions to help clients navigate the complex legal landscape and achieve their business objectives.`,
+    description: [
+        `Our business law services cover a wide range of legal issues that businesses may face, including entity formation, contract negotiation, mergers and acquisitions, regulatory compliance, and dispute resolution. We understand the challenges that businesses encounter and are dedicated to providing tailored legal solutions to meet their specific needs.`,
+        `At Wegner Law PLLC, we focus on building long-term relationships with our clients by delivering high-quality legal services and exceptional client care. Our attorneys work closely with clients to understand their goals and provide proactive advice to help them avoid potential legal pitfalls and capitalize on opportunities.`,
+    ],
+    clients: [Allen, Cushman, Accel, Tag],
+    matters: [
+        {
+            title: "Corporate Restructuring",
+            background: "A mid-sized company needed to restructure its corporate organization to improve efficiency and reduce costs.",
+            outcome: `Wegner Law PLLC successfully reorganized the company's structure, resulting in streamlined operations and significant cost savings.`,
+        },
+        {
+            title: `Mergers & Acquisitions`,
+            background: `A client sought assistance in acquiring a competitor to expand their market presence.`,
+            outcome: `Wegner Law PLLC facilitated the acquisition, ensuring compliance with all regulatory requirements and achieving a smooth transition.`,
+        },
+        {
+            title: `Regulatory Compliance`,
+            background: `A healthcare provider needed to ensure compliance with complex healthcare regulations.`,
+            outcome: `Wegner Law PLLC provided comprehensive compliance advice and implemented necessary policies, allowing the client to operate confidently within the legal framework.`,
+        },
+    ],
+    services: [
+        {
+            icon: 'license',
+            name: "Formation",
+            costs: "$750-$5,000+",
+        },
+        {
+            icon: 'payments',
+            name: "Capital Raises",
+            costs: "$1,000-$20,000",
+        },
+        {
+            icon: 'handshake',
+            name: "Mergers & Acquisitions",
+            costs: "$2,000-$20,000",
+        },
+        {
+            icon: 'receipt_long',
+            name: "Essential Agreements",
+            costs: "$1,500-$10,000",
+        },
+    ],
+    practices: [
+        "Asset Protection",
+        "Corporate Law",
+        "Franchise Law",
+        "Healthcare Law",
+        "Intellectual Property",
+        "Mergers & Acquisitions",
+        "Real Estate",
+        "Private Equity",
+        "Securities Law",
+        "Tax & Tax Planning",
+        "More..."
+    ],
+};
+
+---
+
+<Layout title={ content.name + " Law Firm | Wegner Law PLLC"} description={content.intro}>
+    <PracticePage content={content}/>
+</Layout>

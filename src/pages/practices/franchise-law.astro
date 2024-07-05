@@ -1,0 +1,62 @@
+---
+import PracticePage from "../../components/practicePage/_PracticePage.astro";
+import Layout from "../../layouts/Layout.astro";
+
+import Accelerator from "../../components/_common/imgs/Accelerator.jpg";
+import Gerber from "../../components/_common/imgs/Gerber.jpg";
+import EII from "../../components/_common/imgs/EII.jpg";
+import SJL from "../../components/_common/imgs/StJamesSquare.jpg";
+
+const content = {
+    name: "Franchise Law",
+    intro: `Wegner Law PLLC's franchise law practice provides comprehensive legal services to franchisors and franchisees. Our attorneys are well-versed in the unique legal and regulatory challenges of the franchise industry and offer tailored solutions to help clients achieve their business goals.`,
+    description: [
+        `Our franchise law services cover all aspects of franchising, including franchise agreements, disclosure documents, compliance with federal and state regulations, and dispute resolution. We assist franchisors in developing and expanding their franchise systems and help franchisees understand their rights and obligations under franchise agreements.`,
+        `Wegner Law PLLC is committed to providing strategic advice and practical solutions to franchisors and franchisees. Whether you are looking to start a new franchise, expand an existing system, or resolve a franchise dispute, our experienced attorneys are here to help you navigate the complexities of franchise law.`,
+    ],
+    clients: [Accelerator, Gerber, EII, SJL],
+    matters: [
+        {
+            title: "Franchise System Development",
+            background: "A client needed assistance in developing a new franchise system to expand their business model.",
+            outcome: `Wegner Law PLLC created comprehensive franchise agreements and disclosure documents, ensuring compliance with all regulatory requirements and facilitating a successful launch.`,
+        },
+        {
+            title: `Franchise Agreement Negotiation`,
+            background: `A prospective franchisee sought help negotiating favorable terms in a franchise agreement.`,
+            outcome: `Wegner Law PLLC successfully negotiated terms that provided the franchisee with favorable conditions and protections, enabling a strong start for their new business venture.`,
+        },
+        {
+            title: `Franchise Dispute Resolution`,
+            background: `A franchisor faced a dispute with a franchisee that threatened to disrupt their franchise system.`,
+            outcome: `Wegner Law PLLC resolved the dispute through mediation and negotiation, preserving the integrity of the franchise system and maintaining positive relationships.`,
+        },
+    ],
+    services: [
+        {
+            icon: 'business_center',
+            name: "Franchise System Development",
+            costs: "$2,000-$15,000",
+        },
+        {
+            icon: 'handshake',
+            name: "Franchise Agreement Negotiation",
+            costs: "$1,000-$10,000",
+        },
+    ],
+    practices: [
+        "Asset Protection",
+        "Business Law",
+        "Corporate Law",
+        "Intellectual Property",
+        "Mergers & Acquisitions",
+        "Private Equity",
+        "Tax & Tax Planning",
+        "More..."
+    ],
+};
+
+---
+<Layout title={ content.name + " Law Firm | Wegner Law PLLC"} description={content.intro}>
+    <PracticePage content={content}/>
+</Layout>

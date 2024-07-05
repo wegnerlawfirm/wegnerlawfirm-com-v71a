@@ -1,0 +1,65 @@
+---
+import PracticePage from "../../components/practicePage/_PracticePage.astro";
+import Layout from "../../layouts/Layout.astro";
+
+import Allen from "../../components/_common/imgs/Allen.jpg";
+import Gerber from "../../components/_common/imgs/Gerber.jpg";
+import Millenium from "../../components/_common/imgs/Millennium.jpg";
+import McAnly from "../../components/_common/imgs/McAnly.jpg";
+
+const content = {
+    name: "Tax",
+    intro: `Wegner Law PLLC's tax practice offers expert legal advice on tax planning, compliance, and disputes. Our attorneys help clients navigate the complexities of tax law to minimize liabilities and ensure compliance.`,
+    description: [
+        `Our tax services include tax planning, structuring transactions for tax efficiency, handling tax audits and disputes, and advising on international tax issues. We provide comprehensive tax solutions tailored to the unique needs of each client.`,
+        `Wegner Law PLLC is committed to helping clients achieve their financial goals through effective tax strategies. Whether you are a business or an individual, our experienced attorneys are here to provide the tax expertise you need.`,
+    ],
+    clients: [Allen, McAnly, Millenium, Gerber],
+    matters: [
+        {
+            title: "Corporate Tax Planning",
+            background: "A corporation needed to develop a tax-efficient structure to optimize its operations.",
+            outcome: `Wegner Law PLLC provided strategic tax planning advice, helping the corporation implement a structure that minimized tax liabilities and maximized operational efficiency.`,
+        },
+        {
+            title: `Tax Audit Defense`,
+            background: `A client faced a significant tax audit that could result in substantial penalties.`,
+            outcome: `Wegner Law PLLC successfully defended the client in the audit, reducing potential penalties and achieving a favorable resolution.`,
+        },
+        {
+            title: `International Tax Strategy`,
+            background: `A multinational company needed advice on managing its international tax obligations.`,
+            outcome: `Wegner Law PLLC developed and implemented a comprehensive international tax strategy, ensuring compliance and optimizing the company's global tax position.`,
+        },
+    ],
+    services: [
+        {
+            icon: 'calculate',
+            name: "Tax Planning",
+            costs: "$1,000-$15,000",
+        },
+        {
+            icon: 'gavel',
+            name: "Audit Defense",
+            costs: "$2,000-$25,000",
+        },
+        {
+            icon: 'public',
+            name: "International Tax",
+            costs: "$3,000-$20,000",
+        },
+    ],
+    practices: [
+        "Business Law",
+        "Corporate Law",
+        "Mergers & Acquisitions",
+        "Private Equity",
+        "Intellectual Property",
+        "More..."
+    ],
+};
+
+---
+<Layout title={ content.name + " Law Firm | Wegner Law PLLC"} description={content.intro}>
+    <PracticePage content={content}/>
+</Layout>

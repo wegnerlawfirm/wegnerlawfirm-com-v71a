@@ -1,0 +1,272 @@
+---
+import Panels from "../_common/Panels.astro";
+import Panel from "../_common/Panel.astro";
+import { Image } from "astro:assets";
+import MatterContainer from "./MatterContainer.astro";
+import ServiceContainer from "./ServiceContainer.astro";
+import PracticeContainer from "./PracticeContainer.astro";
+import Wegner from "../_common/imgs/wegner-attorney.png";
+import Icon from "../_common/Icon.astro";
+
+const { content = {} } = Astro.props;
+
+let currentIndex = 0;
+---
+
+<div class="page-header" id="container-hero">
+    <h1>{content.name}</h1>
+</div>
+<div class="page-wrapper">
+    <article class="page-article">
+        <Panels>
+            <Panel isOpen>
+                <div class="panel-label" slot="label">Introduction</div>
+                <p class="content-text">
+                    {content.intro}
+                </p>
+            </Panel>
+            <Panel>
+                <div class="panel-label" slot="label">
+                    What is {content.name}?
+                </div>
+                <div class="panel-content">
+                    {
+                        //@ts-ignore
+                        content.description.map((p) => (
+                            <p class="content-text">{p}</p>
+                        ))
+                    }
+                </div>
+            </Panel>
+            <Panel>
+                <div class="panel-label" slot="label">
+                    Representative Clients
+                </div>
+                <div class="content-text page-clients">
+                    {
+                        //@ts-ignore
+                        content.clients.map((client) => (
+                            <div class="page-client-container">
+                                <Image
+                                    class="page-client-img"
+                                    src={client}
+                                    alt={
+                                        "Wegner Law PLLC " +
+                                        content.name +
+                                        " client."
+                                    }
+                                />
+                            </div>
+                        ))
+                    }
+                </div>
+            </Panel>
+            <Panel>
+                <div class="panel-label" slot="label">
+                    Representative Matters
+                </div>
+                <div class="content-text">
+                    {
+                        //@ts-ignore
+                        content.matters.map((matter) => (
+                            <MatterContainer matter={matter} />
+                        ))
+                    }
+                </div>
+            </Panel>
+        </Panels>
+    </article>
+    <aside class="page-aside">
+        <Panels>
+            <Panel isOpen>
+                <div class="panel-label" slot="label">Related Services</div>
+                <div class="aside-panel-content">
+                    {
+                        //@ts-ignore
+                        content.services.map((service) => (
+                            <ServiceContainer service={service} />
+                        ))
+                    }
+                </div>
+            </Panel>
+            <Panel>
+                <div class="panel-label" slot="label">Related Practices</div>
+                <div class="aside-panel-content">
+                    {
+                        //@ts-ignore
+                        content.practices.map((practice) => (
+                            <PracticeContainer practice={practice} />
+                        ))
+                    }
+                </div>
+            </Panel>
+        </Panels>
+    </aside>
+</div>
+<div class="wrapper-contact">
+    <div class="panel-label related-contact-label">Related People</div>
+    <div class="page-related-people-container">
+        <div class="page-related-img-container">
+            <Image
+                class="page-related-img"
+                alt={content.name + " attorney P. Chris Wegner."}
+                src={Wegner}
+            />
+        </div>
+        <div class="page-conact-block">
+            P. Christopher Wegner<br />
+            Managing Attorney
+            <div class="contact-line">
+                <div class="contact-line-icon">
+                    <Icon icon="phone" />
+                </div>
+                <a class="contact-line-link" href="callTo:2394499200">
+                    (239) 449-9200
+                </a>
+            </div>
+            <div class="contact-line">
+                <div class="contact-line-icon">
+                    <Icon icon="sms" />
+                </div>
+                <a class="contact-line-link" href="smsTo:2394499200">
+                    (239) 449-9200
+                </a>
+            </div>
+            <div class="contact-line">
+                <div class="contact-line-icon">
+                    <Icon icon="alternate_email" />
+                </div>
+                <a
+                    class="contact-line-link"
+                    href="mailTo:cwegner@wegnerlawfirm.com"
+                >
+                    cwegner@wegnerlawfirm.com
+                </a>
+            </div>
+            <div class="contact-line">
+                <div class="contact-line-icon">
+                    <Icon icon="contact_mail" />
+                </div>
+                <a class="contact-line-link" href="/attorneys/cwegner">
+                    Visit Profile
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .related-contact-label{
+        @media (min-width: 768px) {
+            width: 100%;
+            max-width: var(--pageWidth);
+            margin: 0 auto;
+        }
+    }
+
+    .page-related-people-container {
+        @media (min-width: 768px) {
+            display: flex;
+            align-items: flex-end;
+            width: 100%;
+            max-width: var(--pageWidth);
+            margin: 0 auto;
+        }
+    }
+
+    .page-related-img {
+        height: auto;
+        width: 75px;
+        display: inline-block;
+
+        @media(min-width: 768px){
+            width: 100px;
+        }
+    }
+    .wrapper-contact {
+        background-color: #f8f8f8;
+        padding: 1rem 1.5rem;
+    }
+    article {
+        @media (min-width: 768px) {
+            width: 63%;
+            padding-right: 1rem;
+        }
+    }
+
+    .wrapper-contact {
+        display: block;
+    }
+
+    aside {
+        @media (min-width: 768px) {
+            width: 33%;
+            padding-left: 1rem;
+        }
+    }
+
+    .page-clients {
+        @media (min-width: 768px) {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    .page-client-img {
+        @media (min-width: 768px) {
+            height: auto;
+            width: 100%;
+        }
+    }
+
+    .page-client-container {
+        width: 100%;
+        text-align: center;
+        padding: 1rem 0;
+
+        @media (min-width: 768px) {
+            width: 20%;
+            padding: 0 0.7rem 0 0;
+        }
+    }
+
+    .panel-label {
+        padding-bottom: 1rem;
+        font-size: 1.3rem;
+        font-weight: 400;
+        color: var(--altTitleColor);
+        @media (min-width: 768px) {
+            padding: 0;
+        }
+    }
+
+    .page-wrapper {
+        padding: 1rem 1.5rem;
+
+        @media (min-width: 768px) {
+            display: flex;
+            justify-conent: space-between;
+            width: 100%;
+            max-width: var(--pageWidth);
+            margin: 0 auto;
+            padding-left: 0;
+        }
+    }
+
+    .page-header {
+        padding-top: 75px;
+        background-color: var(--altTitleColor);
+        text-align: center;
+        color: white;
+    }
+
+    h1 {
+        font-family: var(--titleFont);
+        font-weight: 400;
+        padding: 0 1.5rem;
+
+        @media (min-width: 768px) {
+            text-align: right;
+        }
+    }
+</style>

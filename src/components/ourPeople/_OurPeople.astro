@@ -1,0 +1,76 @@
+---
+import { Image } from "astro:assets";
+import WegnerCaliegh from "./assets/wegner-caleigh-no-bg.png";
+import Icon from "../_common/Icon.astro";
+---
+
+<div class="strip">
+    <h2>Our people</h2>
+    <div class="strip-content">
+        <div class="panel-sm">
+            <div class="our-people-image-container">
+                <Image
+                    class="our-people-image"
+                    src={WegnerCaliegh}
+                    alt="South Florida business attorney and his dog Caliegh."
+                />
+            </div>
+        </div>
+        <div class="panel-lg">
+            <div class="our-people-content">
+                <h3>P. Christopher "Chris" Wegner</h3>
+                <h4>Founding &amp; Managing Attorney</h4>
+                <p class="content-text">
+                    Chris Wegner is not your typical attorney. As head of the
+                    corporate practice at a national law firm, a serial
+                    entrepreneur, and a former COO of a public company, he
+                    combines real-world experience with legal expertise to
+                    deliver exceptional service to his clients.
+                </p>
+                <a class="content-link" href="attorneys/cwegner">
+                    Click to read Chris's full profile.
+                    <div class="content-link-icon">
+                        <Icon icon="chevron_right" />
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .our-people-image-container{
+
+        @media(min-width: 768px){
+        display: flex;
+        justify-content: center;
+        padding-top: 4rem;
+        padding-bottom: 3rem;
+        }
+    }
+
+    .panel-lg{
+        justify-content: space-around;
+    }
+
+    .our-people-image{
+        height: auto;
+        width: 175px;
+        padding-bottom: 1rem;
+    }
+
+    h4{
+        padding-bottom: 1rem;
+    }
+    .our-people-content{
+        @media(min-width: 768px){
+            max-width: 450px;
+        }
+    }
+
+    .strip{
+        @media(min-width: 768px){
+        padding-top: 3rem;
+        }
+    }
+</style>

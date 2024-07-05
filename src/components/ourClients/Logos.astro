@@ -1,0 +1,95 @@
+---
+import Accelerator from "../_common/imgs/Accelerator.jpg";
+import Alessi from "../_common/imgs/Alessi.jpg";
+import Allen from "../_common/imgs/Allen.jpg";
+import Bartlett from "../_common/imgs/Bartlett.jpg";
+import Capital from "../_common/imgs/CapitalRock.jpg";
+import Connex from "../_common/imgs/Connex.jpg";
+import Culinary from "../_common/imgs/Cullinary.jpg";
+import Cushman from "../_common/imgs/Cushman.jpg";
+import EII from "../_common/imgs/EII.jpg";
+import Fire from "../_common/imgs/Fire.jpg";
+import Flacos from "../_common/imgs/Flacos.jpg";
+import Gerber from "../_common/imgs/Gerber.jpg";
+import HFI from "../_common/imgs/HFI.jpg";
+import Holbrix from "../_common/imgs/Holbrix.jpg";
+import KAP from "../_common/imgs/KAP.jpg";
+import KOVA from "../_common/imgs/KOVA.jpg";
+import McAnly from "../_common/imgs/McAnly.jpg";
+import MPG from "../_common/imgs/Millennium.jpg";
+import Modern from "../_common/imgs/Modern.jpg";
+import NRF from "../_common/imgs/NRF.jpg";
+import Pub from "../_common/imgs/Pub.jpg";
+import Refresh from "../_common/imgs/Refresh.jpg";
+import Salveo from "../_common/imgs/Salveo.jpg";
+import StJames from "../_common/imgs/StJamesSquare.jpg";
+import TAG from "../_common/imgs/TAGroup.jpg";
+import ClientLogo from "./ClientLogo.astro";
+
+const logos = [
+    Culinary,
+    Connex,
+    TAG,
+    Refresh,
+    Capital,
+    KOVA,
+    Modern,
+    MPG,
+    Cushman,
+    Alessi,
+    StJames,
+    Allen,
+    HFI,
+    Pub,
+    Flacos,
+    EII,
+    Bartlett,
+    Holbrix,
+    NRF,
+    Salveo,
+    Accelerator,
+    Fire,
+    Gerber,
+    KAP,
+    McAnly,
+];
+
+const clients =[ 
+'Culinary',
+    'Connex',
+    'TAG',
+    'Refresh',
+    'Capital',
+    'KOVA',
+    'Modern',
+    'MPG',
+    'Cushman',
+    'Alessi',
+    'StJames',
+    'Allen',
+    'HFI',
+    'Pub',
+    'Flacos',
+    'EII',
+    'Bartlett',
+    'Holbrix',
+    'NRF',
+    'Salveo',
+    'Accelerator',
+    'Fire',
+    'Gerber',
+    'KAP',
+    'McAnly',
+]
+
+let currentLogo = -1
+---
+
+{
+    logos.map(img=>{
+        currentLogo++
+        return(
+            <ClientLogo img={img} alt={"Wegner Law PLLC client " + clients[currentLogo]}/>
+        )
+    })
+}

@@ -1,0 +1,64 @@
+---
+import Icon from "../_common/Icon.astro";
+import ContactInformation from "./ContactInformation.astro";
+import ContactForm from "./ContactForm.astro";
+---
+
+<div class="contact-us-strip">
+    <h2>Contact us</h2>
+    <div class="contact-us-strip-content">
+        <div class="panel-sm">
+            <ContactInformation />
+        </div>
+        <div class="panel-lg">
+            <ContactForm />
+        </div>
+    </div>
+</div>
+
+<style>
+    h2{
+        padding-left: 1.5rem;
+        @media(min-width: 768px){
+            padding: 0 0 1rem 0;
+        }
+    }
+
+    .contact-us-strip-content{
+        @media(min-width: 768px){
+            display: flex;
+        }
+    }
+
+    .contact-us-strip {
+        padding-top: 3rem;
+
+        @media (min-width: 768px) {
+            width: 100%;
+            max-width: var(--pageWidth);
+            margin: 0 auto;
+        }
+    }
+
+    .panel-lg {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+        background-color: #f7f7f7;
+        @media (min-width: 768px) {
+            padding: 0;
+            background-color: white;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    .panel-sm{
+        padding: 0 1.5rem 1rem 1.5rem;
+
+        @media(min-width: 768px){
+            padding: 0;
+            padding-bottom: 3rem;
+        }
+    }
+</style>
+

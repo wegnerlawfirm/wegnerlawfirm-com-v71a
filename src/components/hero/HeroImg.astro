@@ -1,0 +1,38 @@
+<div class="hero-img hero-img-active" id="hero-img-1"></div>
+
+<style is:global>
+    .hero-img {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        filter: blur(15px);
+        opacity: 0;
+        transition:
+            filter 3s,
+            opacity 3s;
+    }
+
+    .hero-img.hero-img-active {
+        filter: blur(0);
+        opacity: 1;
+    }
+
+    #hero-img-1 {
+        background-image: linear-gradient(
+                rgba(16, 78, 139, 0.8),
+                rgba(16, 78, 139, 0.8)
+            ),
+            url("imgs/heros/wegner-caliegh.jpg");
+    }
+
+    @media (min-width: 768px) {
+        .hero-img {
+            background-attachment: fixed;
+        }
+    }
+</style>
