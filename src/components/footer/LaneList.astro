@@ -15,6 +15,7 @@ let currrentItem = 0;
   </div>
   <ul class="footer-list">
     {
+      //@ts-ignore
       items.map(itm=>{
         const link = links[currrentItem]
         currrentItem++;
@@ -81,12 +82,16 @@ let currrentItem = 0;
       const sign = this.querySelector('.footer-list-sign')
 
       let isOpen=false
-
+      //@ts-ignore
       btn.addEventListener('click', ()=>{
+              //@ts-ignore
         panel.classList.toggle('footer-list-open')
+              //@ts-ignore
         if(panel.classList.contains('footer-list-open')){
+                //@ts-ignore
           sign.textContent='-'
         }else{
+                //@ts-ignore
           sign.textContent='+'
         }
       })

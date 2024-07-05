@@ -63,6 +63,7 @@ import Testimonials from "./Testimonials.astro";
         let lastDisplay = -1;
 
         // Improved random number generator function
+              //@ts-ignore
         const getRandomNumber = (min, max) =>
             Math.floor(Math.random() * (max - min + 1) + min);
 
@@ -85,6 +86,7 @@ import Testimonials from "./Testimonials.astro";
         }
 
         // Optimized replaceImg function to handle fade-in effect
+              //@ts-ignore
         const replaceImg = (ele, newImage) => {
             const oldImage = ele.lastChild;
             oldImage.classList.add("client-logo-img-hidden");
