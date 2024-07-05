@@ -1,0 +1,102 @@
+---
+import { Image } from "astro:assets";
+import Icon from "../_common/Icon.astro";
+import Wegner from "../_common/imgs/wegner-attorney.png";
+import Contact from "./Contact.astro";
+---
+
+<div class="profile-header">
+    <hgroup class="attorney-hgroup">
+        <h1>P. Christopher "Chris" Wegner</h1>
+        <h2>Founding &amp; Managing Attorney</h2>
+    </hgroup>
+    <div class="header-content">
+        <div class="profile-image-container" id="container-hero">
+            <Image
+                class="profile-image"
+                alt="Business attorney P. Chris Wegner"
+                src={Wegner}
+            />
+            <div class="scroll-reminder">
+                Scroll Down<br/>
+                <Icon icon="keyboard_arrow_down"/>
+            </div>
+        </div>
+        <Contact />
+    </div>
+</div>
+
+<style>
+    .scroll-reminder{
+        width: 100%;
+        position: absolute;
+        text-align: center;
+        color: white;
+        padding-bottom: 33px;
+        @media(min-width: 768px){
+            display: none;
+        }
+    }
+
+    .profile-image-container{
+        height: 70vh;
+        display: flex;
+        align-items: flex-end;
+        position: relative;
+
+        @media(min-width: 768px){
+            height: initial;
+        }
+    }
+
+    .header-content {
+        @media (min-width: 768px) {
+            display: flex;
+        }
+    }
+    .profile-header {
+        background-color: var(--altTitleColor);
+        line-height: 1.3;
+    }
+
+    h1 {
+        font-size: 1.3rem;
+        font-weight: 300;
+        color: white;
+        @media (min-width: 768px) {
+            font-size: 2rem;
+            padding: 0;
+            margin: 0;
+        }
+    }
+
+    h2 {
+
+        padding: 0;
+        margin: 0;
+        font-size: 1.1rem;
+
+        @media(min-width: 768px){
+            font-size: 1.5rem;
+        }
+    }
+
+    hgroup {
+       height: 30vh;
+       display: flex;
+       flex-direction: column;
+        justify-content: flex-end;
+        padding-left: 1.5rem;
+        @media (min-width: 768px) {
+            padding-left: 345px;
+            height: initial;
+            padding-top: 55px;
+        }
+    }
+
+    .profile-image {
+        height: auto;
+        width: 300px;
+        display: block;
+    }
+</style>

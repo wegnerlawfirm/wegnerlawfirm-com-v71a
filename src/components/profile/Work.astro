@@ -1,0 +1,108 @@
+---
+import { Image } from "astro:assets";
+import akerman from "./assets/akerman.jpg";
+import dandb from "./assets/dandb.jpg";
+import gt from "./assets/gtlaw.jpg";
+import mdfla from "./assets/fdctmdfla.jpg";
+import synergy from "./assets/synergy.jpg";
+import WegnerLaw from "./assets/firm-signature.jpg";
+---
+
+<div class="panel-page">
+    <div class="row">
+        <div class="img-container">
+            <Image
+                src={WegnerLaw}
+                alt="Wegner Law PLLC"
+                class="attorney-logo"
+            />
+        </div>
+        <div class="col">
+            Wegner Law PLLC<br />
+            Founding &amp; Managing Attorney
+        </div>
+    </div>
+    <div class="row">
+        <div class="img-container">
+            <Image src={dandb} alt="Duggan Bertsch LLC" class="attorney-logo" />
+        </div>
+        <div class="col">
+            Duggan Bertsch LLC<br />
+            Partner<br />
+            Partner in Charge, Florida<br />
+            Chair, Corporate Law Practice
+        </div>
+    </div>
+    <div class="row">
+        <div class="img-container">
+            <Image src={akerman} alt="Akerman LLP" class="attorney-logo" />
+        </div>
+        <div class="col">
+            Akerman LLC <br />
+            Attorney, Corporate &amp; Tax
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="img-container">
+            <Image
+                src={mdfla}
+                alt="Federal District Court for the Middle District of Florida"
+                class="attorney-logo"
+            />
+        </div>
+        <div class="col">
+            United States District Court<br />
+            Middle District of Fla. (Tampa Div.)<br />
+            Clerk
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="img-container">
+            <Image src={gt} alt="Greenberg Traurig LLP" class="attorney-logo" />
+        </div>
+        <div class="col">
+            Greenberg Traurig LLP<br />
+            Asscoiate, Securities
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="img-container">
+            <Image
+                src={synergy}
+                alt="Atlantic Synergy Corp."
+                class="attorney-logo"
+            />
+        </div>
+        <div class="col">
+            Atlantic Synergy Corp.<br />
+            Chief Operations Officer
+        </div>
+    </div>
+</div>
+
+<style>
+    .attorney-logo {
+        height: 50px;
+        width: auto;
+    }
+
+    .img-container {
+        text-align: center;
+        padding-bottom: 1rem;
+        @media (min-width: 768px) {
+            width: 150px;
+        }
+    }
+
+    .row {
+        padding: 1rem 0;
+        text-align: center;
+        @media (min-width: 768px) {
+            display: flex;
+            text-align: left;
+        }
+    }
+</style>

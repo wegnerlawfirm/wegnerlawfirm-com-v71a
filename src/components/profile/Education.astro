@@ -1,0 +1,66 @@
+---
+import { Image } from "astro:assets";
+import NYU from './assets/nyu.jpg'
+import Stetson from './assets/stetson.jpg'
+import fgcu from './assets/fgcu.jpg'
+import Eckerd from './assets/EC.jpg'
+---
+
+<div class="panel-page">
+    <div class="row">
+        <div class='img-container'><Image src={Stetson} alt="New York University School of Law" class="attorney-logo"/></div>
+        <div class="col">
+            Stetson University College of Law<br/>
+            juris doctorate, <span style="font-style: italic;"> magna cum laude</span><br/> (top 5% of graduating class)
+        </div>
+    </div>
+    <div class="row">
+        <div class='img-container'><Image src={NYU} alt="New York University School of Law" class="attorney-logo"/></div>
+        <div class="col">
+            New York University School of Law<br/>
+            LL.M. (Taxation)
+        </div>
+    </div>
+
+    <div class="row">
+        <div class='img-container'><Image src={fgcu} alt="Florida Gulf Coast Univeristy" class="attorney-logo"/></div>
+        <div class="col">
+            Florida Gulf Coast Univeristy<br/>
+            B.A. Computer Science<br/>
+            Member, Mens' Vasity Tennis
+        </div>
+    </div>
+
+    <div class="row">
+        <div class='img-container'><Image src={Eckerd} alt="Eckerd College" class="attorney-logo"/></div>
+        <div class="col">
+            Computer Engineering<br/>
+            Member, Mens' Vasity Tennis
+        </div>
+    </div>
+</div>
+
+<style>
+    .attorney-logo{
+        height: 75px;
+        width: auto;
+    }
+
+    .img-container{
+        text-align: center;
+        padding-bottom: 1rem;
+        @media(min-width: 768px){
+            width: 150px;
+        }
+
+    }
+
+    .row{
+
+        padding: 1rem 0;
+        text-align: center;
+        @media(min-width: 768px){
+            display: flex;
+            text-align: left;
+        }
+    }

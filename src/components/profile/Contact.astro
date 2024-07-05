@@ -1,0 +1,134 @@
+---
+import Icon from "../_common/Icon.astro";
+import Panel from "../_common/Panel.astro";
+import Panels from "../_common/Panels.astro";
+---
+
+<div class="contact-container">
+    <div class="contact-line">
+        <div class="contact-line-label">
+            <Icon icon="phone" />
+        </div>
+        <a href="callTo:2394499200" class="contact-line-text">
+            (239) 449-9200
+        </a>
+    </div>
+    <div class="contact-line">
+        <div class="contact-line-label">
+            <Icon icon="sms" />
+        </div>
+        <a href="smsTo:2394499200" class="contact-line-text">
+            (239) 449-9200
+        </a>
+    </div>
+    <div class="contact-line">
+        <div class="contact-line-label">
+            <Icon icon="fax" />
+        </div>
+        <a href="faxTo:2397853990" class="contact-line-text">
+            (239) 785-3990
+        </a>
+    </div>
+    <div class="contact-line">
+        <div class="contact-line-label">
+            <Icon icon="alternate_email" />
+        </div>
+        <a href="mailTo:cwegner@wegnerlawfirm.com" class="contact-line-text">
+            cwegner@wegnerlawfirm.com
+        </a>
+    </div>
+
+    <Panels>
+        <Panel isOpen>
+            <div class="contact-line" slot="label">
+                <div class="contact-line-label">
+                    <Icon icon="home_pin" />
+                </div>
+                <span class="contact-line-text-label"> Main Office </span>
+            </div>
+            <address class="contact-line-text panel-item">
+                23160 Fashion Drive<br />
+                Suite 217<br />
+                Estero, FL 33928
+            </address>
+        </Panel>
+        <Panel>
+            <div class="contact-line" slot="label">
+                <div class="contact-line-label">
+                    <Icon icon="local_post_office" />
+                </div>
+                <span class="contact-line-text-label"> Mailing Address </span>
+            </div>
+            <address class="contact-line-text panel-item">
+                P.O. Box 1353<br />
+                Estero, FL 33929-1353
+            </address>
+        </Panel>
+    </Panels>
+
+    <div class="contact-line">
+        <div class="contact-line-label">
+            <Icon icon="contact_mail" />
+        </div>
+        <a href="/resources/vcards/cwegner.vcf" class="contact-line-text">
+            vCard
+        </a>
+    </div>
+</div>
+<style>
+    .contact-container{
+        padding: 1rem 1.5rem;
+        color: white;
+        @media(min-width: 768px){
+            padding: 0;
+            padding-top: 2rem;
+        padding-left: 45px;
+        }
+    }
+
+    .icon-label {
+        width: 1.7rem;
+    }
+
+    .panel-item {
+        padding-left: 1.7rem;
+    }
+
+    .contact-line-text-label {
+        font-weight: 500;
+    }
+
+    h1 {
+        font-family: var(--titleFont);
+        color: white;
+        font-weight: 300;
+        font-size: 1.7rem;
+    }
+
+    .row {
+        display: flex;
+    }
+
+    h2 {
+        font-family: var(--primaryFont);
+        font-size: 1.2rem;
+        color: var(--backgroundColor);
+        padding-bottom: 1rem;
+    }
+
+    .contact-line {
+        display: flex;
+        color: white;
+    }
+
+    .contact-line-label {
+        width: 1.7rem;
+        display: inline-block;
+    }
+
+    .contact-line-text {
+        color: white;
+        text-decoration: none;
+        font-style: normal;
+    }
+</style>

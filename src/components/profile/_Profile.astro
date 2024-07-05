@@ -1,0 +1,214 @@
+---
+import { Image } from "astro:assets";
+import Icon from "../_common/Icon.astro";
+import ProfileHeader from "./ProfileHeader.astro";
+import Wegner from "../_common/imgs/wegner-attorney.png";
+import Contact from "./Contact.astro";
+import Panel from "../_common/Panel.astro";
+import Panels from "../_common/Panels.astro";
+import Education from "./Education.astro";
+import Work from "./Work.astro";
+import QuotationMarks from "../_common/QuotationMarks.astro";
+---
+
+<ProfileHeader/>
+<div class="main-stage">
+    <article class="profile-article">
+        <p class="content-text">
+            Mr. Chris Wegner is a highly accomplished attorney specializing in
+            corporate law, private equity, and tax law. With a strong
+            educational background and extensive experience in both the legal
+            and business worlds, Chris brings a unique perspective to his
+            clients, offering innovative solutions and strategic advice.
+        </p>
+        <Panels>
+            <Panel isOpen>
+                <h3 slot="label" class="attorney-h3">
+                    <span class="label-icon">
+                        <Icon icon="book" />
+                    </span>
+                    Biography
+                </h3>
+                <p class="content-text">
+                    Chris Wegner earned his Bachelor of Arts in Computer Science
+                    from Florida Gulf Coast University. He then graduated cum
+                    laude with a Juris Doctor from Stetson University College of
+                    Law, followed by an LL.M. from New York University School of
+                    Law.
+                </p>
+                <p class="content-text">
+                    Private equity funds and investors from the U.S. and Europe
+                    have come to rely on Chris’s ability to bring value to
+                    businesses. They frequently turn to him for the legal needs
+                    of portfolio companies nationwide due to his proven
+                    problem-solving skills and his knack for discovering areas
+                    for improvement or opportunity that others often miss.
+                </p>
+                <p class="content-text">
+                    His reputation in the investment community led to
+                    recognition from the Naples Accelerator, a Collier
+                    County-based public-private partnership dedicated to
+                    cultivating local startups and attracting companies globally
+                    to Naples and Immokalee. In early 2017, the Naples
+                    Accelerator engaged Chris to provide essential legal
+                    services to growing companies, recognizing his unique legal
+                    skill set and approachable manner
+                </p>
+                <p class="content-text">
+                    In addition to providing general business and corporate law
+                    services to emerging and established companies in Southwest
+                    Florida, Chris works with multinational corporations on
+                    complex domestic and international tax issues, including
+                    multi-million-dollar mergers and acquisitions, transfer
+                    price exams, and other high-stakes IRS audits. He has served
+                    as lead counsel on a $100 million merger involving parties
+                    in seven countries across North and South America, where he
+                    not only handled intricate tax law issues but also created a
+                    new type of security that allowed the acquirer to monetize
+                    intellectual property and complete the merger without
+                    resorting to debt.
+                </p>
+                <p class="content-text">
+                    Chris has also served as lead counsel on a $100 million
+                    merger involving parties in seven countries across North and
+                    South America after other lawyers were unable to bring the
+                    sides together. In this capacity, Chris not only oversaw the
+                    very intricate tax law issues but also created a new type of
+                    security that allowed the acquirer to monetize their
+                    intellectual property and complete the merger without
+                    turning to debt or other sources of money.
+                </p>
+                <p class="content-text">
+                    Chris also advises smaller physician’s offices in Naples and
+                    Bonita on business, tax, and healthcare law issues. His tax
+                    law background uniquely positions him to understand and
+                    apply healthcare regulations, and his familiarity with the
+                    local healthcare industry allows him to address the specific
+                    challenges and opportunities confronting local doctors.
+                </p>
+            </Panel>
+
+            <Panel>
+                <h3 slot="label" class="attorney-h3">
+                    <span class="label-icon">
+                        <Icon icon="school" />
+                    </span>
+                    Education
+                </h3>
+                <Education />
+            </Panel>
+
+            <Panel>
+                <h3 slot="label" class="attorney-h3">
+                    <span class="label-icon">
+                        <Icon icon="work" />
+                    </span>
+                    Work
+                </h3>
+                <Work />
+            </Panel>
+
+            <Panel>
+                <h3 slot="label" class="attorney-h3">
+                    <span class="label-icon">
+                        <Icon icon="family_restroom" />
+                    </span>
+                    Personal
+                </h3>
+                <div class="panel-page">
+                    <p class="content-text">
+                        While in college, Chris co-founded a small technology
+                        company that eventually went public and was sold over
+                        the counter on the NASDAQ. This experience provides him
+                        with a unique ability to see problems and opportunities
+                        from the perspectives of both a business owner and an
+                        experienced attorney. Having grown up around the Naples
+                        healthcare industry, Chris has a deep understanding of
+                        the local community and its needs, which enhances his
+                        ability to serve his clients effectively.
+                    </p>
+
+                    <p class="content-text">
+                        Between his time at Stetson and New York University,
+                        Chris played semi-pro tennis (emphasis on the semi),
+                        where he went 1-26. If asked to describe this time of
+                        his life, Chris will proudly say that he lost to the
+                        people who lost to the people that you see on
+                        television. Today, Chris still enjoys playing tennis,
+                        working out at the Greater Naples YMCA, and spending
+                        time with his wife Elyse, two dogs, and three cats.
+                    </p>
+
+                    <p class="content-text">
+                        Chris is a native of Naples, Florida, where he attended
+                        Seacrest Country Day School and Naples High School
+                        before going to Eckerd College on a tennis scholarship
+                        (he later transferred to Florida Gulf Coast University
+                        to finish his undergraduate degree). Between college and
+                        law school, Chris worked as an accountant and business
+                        consultant for his father’s accounting firm on Tamiami
+                        Trail.
+                    </p>
+                </div>
+            </Panel>
+        </Panels>
+    </article>
+    <aside class="profile-aside">
+        <div class="quotation-mark-container">
+            <QuotationMarks color="var(--titleColor)" />
+        </div>
+        <p class="content-text">
+            Being a good attorney means more than just knowing the law. It means
+            knowing how to use the law to help your client achieve their goals
+            while making their life easier.
+        </p>
+        <p class="content-text quote-speaker">--P. Christopher Wegner</p>
+    </aside>
+</div>
+
+<style>
+
+
+    .quote-speaker {
+        text-align: right;
+    }
+
+    .profile-aside {
+        @media (min-width: 768px) {
+            padding: 1rem 0 0 2rem;
+            width: 30%;
+            flex-grow: 0;
+            flex-shrink: 0;
+        }
+    }
+
+    .profile-article {
+        @media (min-width: 768px) {
+            width: 65%;
+            flex-shrink: 0;
+        }
+    }
+
+    .label-icon {
+        width: 2rem;
+    }
+
+
+
+
+    .main-stage {
+        padding: 1rem 1.5rem;
+        display: flex;
+        flex-direction: column-reverse;
+
+        @media (min-width: 768px) {
+            flex-direction: row;
+            max-width: 1000px;
+        }
+    }
+
+    .quotation-mark-container {
+        width: 2rem;
+        fill: var(--titleColor);
+    }
+</style>
