@@ -6,14 +6,17 @@ import OurPeople from "../components/ourPeople/_OurPeople.astro";
 import OurPractices from "../components/ourPractices/_OurPractices.astro";
 import OurClients from "../components/ourClients/_OurClients.astro";
 import ContactUs from "../components/contactUs/_ContactUs.astro";
+import About from "../components/about/_About.astro";
 ---
 
+<div id="home"></div>
 <Layout
 	title="South Florida Business Lawyers | Wegner Law PLLC"
 	description="Wegner Law PLLC: Premier South Florida business law firm. Expert counsel for companies, entrepreneurs, and investment funds. Specializing in corporate transactions, fund formation, and commercial contracts. Personalized legal solutions for growing businesses."
 >
 	<Hero/>
 	<div id="about" class="section-divider"></div>
+	<About/>
 	<div id="attorney" class="section-divider"></div>
 	<OurPeople />
 
@@ -28,3 +31,10 @@ import ContactUs from "../components/contactUs/_ContactUs.astro";
 	<div id="contact" class="section-divider"></div>
 	<ContactUs />
 </Layout>
+
+<style>
+	.section-divider{
+		padding: 50px;
+		margin: -50px;
+	}
+</style>
