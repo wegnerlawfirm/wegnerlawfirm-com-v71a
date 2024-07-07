@@ -2,7 +2,7 @@
 
 <style is:global>
     .hero-img {
-        background-position: center;
+        background-position: top center;
         background-repeat: no-repeat;
         background-size: cover;
         position: absolute;
@@ -15,11 +15,14 @@
         transition:
             filter 3s,
             opacity 3s;
+
+
     }
 
     .hero-img.hero-img-active {
         filter: blur(0);
         opacity: 1;
+        
     }
 
     #hero-img-1 {

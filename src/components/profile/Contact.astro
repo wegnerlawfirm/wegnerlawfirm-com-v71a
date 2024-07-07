@@ -76,13 +76,16 @@ import Panels from "../_common/Panels.astro";
     </div>
 </div>
 <style>
-    .contact-container{
+    .contact-container {
         padding: 1rem 1.5rem;
-        color: white;
-        @media(min-width: 768px){
+        color: #333;
+        background-color: #f8f8f8;
+        @media (min-width: 768px) {
             padding: 0;
             padding-top: 2rem;
-        padding-left: 45px;
+            padding-left: 45px;
+            color: white;
+            background-color: var(--altTitleColor);
         }
     }
 
@@ -118,7 +121,10 @@ import Panels from "../_common/Panels.astro";
 
     .contact-line {
         display: flex;
-        color: white;
+        color: #333;
+        @media (min-width: 768px) {
+            color: white;
+        }
     }
 
     .contact-line-label {
@@ -127,8 +133,12 @@ import Panels from "../_common/Panels.astro";
     }
 
     .contact-line-text {
-        color: white;
+        color: #333;
         text-decoration: none;
         font-style: normal;
+
+        @media (min-width: 768px) {
+            color: white;
+        }
     }
 </style>

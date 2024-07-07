@@ -1,0 +1,39 @@
+---
+import Icon from "../_common/Icon.astro"
+
+    const {name, icon} = Astro.props
+---
+
+<div class="industry-container">
+    <div class="industry-icon-container">
+        <Icon icon={icon}/>
+    </div>
+    <div class="industry-label">
+        {name}
+    </div>
+</div>
+
+<style>
+    .industry-container{
+        width: 100%;
+        text-align: center;
+        padding: 1rem 0;
+        @media(min-width: 500px){
+            width: 50%;
+        }
+        @media(min-width: 768px){
+        width: 20%;
+        }
+    }
+
+    .industry-icon-container{
+        font-size: 1.5rem;
+        text-align: center;
+        font-weight: 200;
+    }
+
+    .industry-label{
+        font-size: 1rem;
+        text-align: center;
+    }
+</style>

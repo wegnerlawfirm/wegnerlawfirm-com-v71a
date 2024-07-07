@@ -40,7 +40,7 @@ const convertImagesToBackgroundString = (imgs) => {
     Unlike other lawyers, we pride ourselves on being approachable and accessible to our clients. Learn how much clients achieve with lawyers they actually get along with.
     `,
       `
-    Wegner Law PLLC is all about serving businesses, entrepreneurs and investors. Learn how this focus allows to provide the very best to our clients.
+    Wegner Law PLLC is all about serving businesses, entrepreneurs and investors. Learn how this focus allows us to provide the very best to our clients.
     `,
     ];
   

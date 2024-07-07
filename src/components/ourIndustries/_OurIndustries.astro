@@ -1,0 +1,148 @@
+---
+import Industry from "./Industry.astro";
+
+let industries = [
+    {
+        name: "Agriculture",
+        icon: "agriculture",
+        intro: "Navigating agricultural regulations and contracts.",
+        highlight: true,
+    },
+    {
+        name: "Family Offices",
+        icon: "group",
+        intro: "Guiding family-owned businesses through transitions.",
+        highlight: true,
+    },
+    {
+        name: "Small Businesses",
+        icon: "group",
+        intro: "Guiding family-owned businesses through transitions.",
+        highlight: true,
+    },
+
+    {
+        name: "Entertainment",
+        icon: "movie",
+        intro: "Navigating entertainment contracts and IP rights.",
+        highlight: false,
+    },
+    {
+        name: "Family Businesses",
+        icon: "group",
+        intro: "Guiding family-owned businesses through transitions.",
+        highlight: false,
+    },
+
+    {
+        name: "Franchises",
+        icon: "store",
+        intro: "Assisting franchisors and franchisees.",
+        highlight: false,
+    },
+    {
+        name: "Investment Funds",
+        icon: "account_balance",
+        intro: "Guiding financial institutions and investors.",
+        highlight: true,
+    },
+    {
+        name: "More",
+        icon: "more_horiz",
+        intro: "Working with clients from many industries.",
+        highlight: false,
+    },
+    {
+        name: "Physicians",
+        icon: "stethoscope",
+        intro: "Protecting health industry interests.",
+        highlight: true,
+    },
+    {
+        name: "Real Estate",
+        icon: "home",
+        intro: "Navigating real estate complexities.",
+        highlight: true,
+    },
+    {
+        name: "RIAs",
+        icon: "assured_workload",
+        intro: "Advising retail businesses and online sellers.",
+        highlight: true,
+    },
+
+    {
+        name: "Retail",
+        icon: "shopping_cart",
+        intro: "Advising retail businesses and online sellers.",
+        highlight: false,
+    },
+    {
+        name: "Sports",
+        icon: "sports_soccer",
+        intro: "Handling sports contracts and athlete representation.",
+        highlight: false,
+    },
+    {
+        name: "Startups",
+        icon: "rocket",
+        intro: "Start on solid legal ground.",
+        highlight: true,
+    },
+    {
+        name: "Technology",
+        icon: "developer_mode",
+        intro: "Empowering innovation.",
+        highlight: false,
+    }
+]
+
+industries.sort((x,y)=>{
+    if(x.highlight && y.highlight){
+        return 0
+    }
+    if(x.highlight){ return -1}
+    if(y.highlight){return 1}
+    if(x.name==='More') return 1
+    if(y.name ==='More') return -1
+    return x.name.localeCompare(y.name)
+})
+
+---
+
+<div class="strip">
+    <h2>Our industries</h2>
+    <div class="strip-content">
+        {
+            industries.map(ind=><Industry name={ind.name} icon={ind.icon}/>)
+        }
+    </div>
+</div>
+
+
+<style>
+
+    .strip{
+        @media(min-width: 768px){
+            max-width: 100%;
+            margin: 0 auto;
+        }
+    }
+
+    .strip-content{
+        @media(min-width: 500px){
+
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        max-width: 100%;
+        }
+    }
+
+    h2{
+        @media(min-width: 768px){
+            text-align: center;
+        }
+    }
+</style>
