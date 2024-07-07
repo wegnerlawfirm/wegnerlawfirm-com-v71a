@@ -16,13 +16,12 @@
             filter 3s,
             opacity 3s;
 
-
+        background-attachment: fixed;
     }
 
     .hero-img.hero-img-active {
         filter: blur(0);
         opacity: 1;
-        
     }
 
     #hero-img-1 {
@@ -31,6 +30,13 @@
                 rgba(16, 78, 139, 0.8)
             ),
             url("imgs/heros/wegner-caliegh.jpg");
+    }
+
+    @supports (-webkit-touch-callout: none) {
+        .hero-img {
+            background-attachment: scroll;
+            -webkit-transform: translateZ(0);
+        }
     }
 
     @media (min-width: 768px) {
