@@ -1,0 +1,27 @@
+---
+const {title}= Astro.props
+---
+<div class="page-header" id="container-hero">
+    <h1>
+        {title}
+    </h1>
+</div>
+
+<style>
+    .page-header {
+        padding-top: 75px;
+        background-color: var(--altTitleColor);
+        text-align: center;
+        color: white;
+    }
+
+    h1 {
+        font-family: var(--titleFont);
+        font-weight: 400;
+        padding: 0 1.5rem;
+
+        @media (min-width: 768px) {
+            text-align: right;
+        }
+    }
+</style>
