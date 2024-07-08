@@ -44,4 +44,11 @@
             background-attachment: fixed;
         }
     }
+
+    @supports (-webkit-touch-callout: none) {
+        .hero-img {
+            transform: translateZ(0) scale(1);
+            background-attachment: scroll;
+        }
+    }
 </style>
